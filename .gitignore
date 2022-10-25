@@ -1,0 +1,5 @@
+skywater_template/calibre_rundir
+skywater_template/calibre/
+skywater_template/libs/
+skywater_template/simulations/
+skywater_template/*.log
