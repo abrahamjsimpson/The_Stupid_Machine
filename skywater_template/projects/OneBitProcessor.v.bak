@@ -1,1 +1,7 @@
 
+module OneBitProcessor
+	(input clk,
+	input reset,
+	input en,
+	input reg [1:0] inReg,
+	 

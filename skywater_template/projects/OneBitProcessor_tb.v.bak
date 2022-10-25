@@ -13,8 +13,5 @@ module OneBitProcessor_tb;
 	reg reset;
 	reg [1:0] input_signals;
 	// outputs from the DUT
-	wire [6:0] regs_out;
-
-
-endmodule
+	
 	

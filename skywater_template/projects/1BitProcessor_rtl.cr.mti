@@ -1,6 +1,15 @@
-/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v {0 {vlog -work 1BitProcessor_rtl -vopt -stats=none /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
+/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v {1 {vlog -work 1BitProcessor_rtl -vopt -stats=none /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
 QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
-** Error: (vlog-13069) /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v(1): near "EOF": syntax error, unexpected end of source code.
-** Error: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v(1): (vlog-13205) Syntax error found in the scope following 'yukyukyu'. Is there a missing '::'?
+-- Compiling module OneBitProcessor
 
-} {3.0 5.0} {}}
+Top level modules:
+	OneBitProcessor
+
+} {} {}} /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v {1 {vlog -work 1BitProcessor_rtl -vopt -stats=none /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
+QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+-- Compiling module OneBitProcessor_tb
+
+Top level modules:
+	OneBitProcessor_tb
+
+} {} {}}

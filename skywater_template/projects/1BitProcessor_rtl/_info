@@ -9,3 +9,51 @@ z2
 !i10f 100
 cModel Technology
 d/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template
+vOneBitProcessor
+Z0 !s110 1666668129
+!i10b 1
+!s100 UEcz=R501>b8PU7Y[gS4c0
+!s11b g8o<=cejFG2_^Wj>ILj3z1
+I@n@h1zP07niHf:YTM@KjX0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects
+w1666667853
+8/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
+F/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
+!i122 -1
+L0 2
+Z3 OL;L;2019.4;69
+r1
+!s85 0
+31
+Z4 !s108 1666668129.000000
+!s107 /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v|
+!s90 -reportprogress|300|-work|1BitProcessor_rtl|-vopt|-stats=none|/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v|
+!i113 0
+Z5 o-work 1BitProcessor_rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
+n@one@bit@processor
+vOneBitProcessor_tb
+R0
+!i10b 1
+!s100 lB<;2>>;FS:XBQGlhaRS_0
+!s11b Am16PVoL1>]G^ZTf9j:P<2
+I41=UX9bWk7M[6CKB^CnQf0
+R1
+R2
+w1666668125
+8/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
+F/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
+!i122 -1
+L0 10
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v|
+!s90 -reportprogress|300|-work|1BitProcessor_rtl|-vopt|-stats=none|/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v|
+!i113 0
+R5
+R6
+n@one@bit@processor_tb
