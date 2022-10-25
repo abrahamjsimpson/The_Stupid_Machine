@@ -18,20 +18,20 @@ Branch on True:
 7-13:	Number of instructions to “jump” over (this number is added or subtracted from the p.c. based on bit 6)  
 
 # Testing:
-The Verilog code will be rigorously tested using Vsim. For unit testing, the different blocks in the diagram will be tested individually, as will the functionality for reset and for loading new instructions. For integration testing, a few small programs will be written in assembly, possibly using a custom assembler, to use in the test bed to test the processor’s functionality. Verilog includes functions to read data from a file, so lengthy programs can be written using an external program and then imported into the testbed.
-The module will use the following pins:
-In: 	reg0/read instruction bit
-In:	reg1
-Out:	reg2
-Out:	reg3 
-Out:	reg4 
-Out:	reg5 
-Out:	reg6 
-Out:	reg7 
-Out:	reg8
-In:	clock
-In:	synchronous reset
-In:	Enable write to Instruction Memory
-(12 signal pins, plus two for voltage supply and ground, for a total of 14 pins)
+The Verilog code will be rigorously tested using Vsim. For unit testing, the different blocks in the diagram will be tested individually, as will the functionality for reset and for loading new instructions. For integration testing, a few small programs will be written in assembly, possibly using a custom assembler, to use in the test bed to test the processor’s functionality. Verilog includes functions to read data from a file, so lengthy programs can be written using an external program and then imported into the testbed.  
+The module will use the following pins:  
+In: 	reg0/read instruction bit  
+In:	reg1  
+Out:	reg2  
+Out:	reg3   
+Out:	reg4   
+Out:	reg5  
+Out:	reg6  
+Out:	reg7  
+Out:	reg8  
+In:	clock  
+In:	synchronous reset  
+In:	Enable write to Instruction Memory  
+(12 signal pins, plus two for voltage supply and ground, for a total of 14 pins)  
 On the rising edge of the clock when reset is asserted, all registers and all instruction memory positions are reset to 0. When enable write is asserted, on each clock edge the value of reg0 is read into instruction memory, beginning at instruction 0, position 0 and proceeding across each bit of each instruction in order until enable write is deasserted, at which point execution of the program begins.
 
