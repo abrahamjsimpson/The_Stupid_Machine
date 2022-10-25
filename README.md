@@ -17,8 +17,7 @@ Branch on True:
 6:	False for advance p.c., true for regress  
 7-13:	Number of instructions to “jump” over (this number is added or subtracted from the p.c. based on bit 6)  
 
-#Testing:
-
+# Testing:
 The Verilog code will be rigorously tested using Vsim. For unit testing, the different blocks in the diagram will be tested individually, as will the functionality for reset and for loading new instructions. For integration testing, a few small programs will be written in assembly, possibly using a custom assembler, to use in the test bed to test the processor’s functionality. Verilog includes functions to read data from a file, so lengthy programs can be written using an external program and then imported into the testbed.
 The module will use the following pins:
 In: 	reg0/read instruction bit
