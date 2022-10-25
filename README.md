@@ -8,7 +8,9 @@ High Level Description:
 The custom instruction set for this processor supports two formats for the two operations that the processor executes:
 NAND:
 1: 	true
+
 2-5: 	source register 1
+
 6-9:	source register 2
 10-13:	destination register
 Branch on True:
