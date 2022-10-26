@@ -1,5 +1,5 @@
-NAND in1 in2 out4
-NAND in2 out4 r2
-BRANCH r2 -2
-NAND r2 in2 out4
-BRANCH out4 -4
+NAND in0 in1 out4
+NAND in1 out4 reg2
+BRANCH reg2 - 2
+NAND reg2 in1 out4
+BRANCH out4 - 4
