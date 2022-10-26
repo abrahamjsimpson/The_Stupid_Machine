@@ -51,7 +51,7 @@ def regNameToAddr(name):
     elif name.lower()[0] == 'r':  # Internal Regs
         shift = 10;
         
-    return "{0:b}".format(int(name.rstrip()[-1]) + shift).zfill(4);
+    return "{0:b}".format(int(name.rstrip()[-1]) + shift).zfill(4);  # FIXME will not work for 'high' FIXME FIXME -==============================
 
 # Convert array of assembly tokens (as strings) into the corresponding binary instruction
 def tokensToBin(tokens):
