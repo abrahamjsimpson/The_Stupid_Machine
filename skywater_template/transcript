@@ -13,7 +13,24 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project 1BitProcessor_rtl
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v failed with 2 errors.
+# Compile of OneBitProcessor_tb.v failed with 3 errors.
+# Compile of OneBitProcessor_tb.v failed with 2 errors.
 # Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
+# Compile of OneBitProcessor_tb.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+huinjkbj
+# invalid command name "huinjkbj"
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 20:25:08 on Oct 26,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+add wave -position insertpoint sim:/OneBitProcessor_tb/*
+run
+#                    0 << Starting the Simulation
+# End time: 20:26:09 on Oct 26,2022, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 0
