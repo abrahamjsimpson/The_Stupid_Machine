@@ -32,6 +32,8 @@
 #
 # For Branching number:
 # Number shall begin with either a + (to advance p.c.) or a - (to regress). There shall be a space between the sign (+ or -) and the number.
+#
+# Lines starting with a # are considered comments and are not assembled
 
 
 import sys;
@@ -85,7 +87,8 @@ with open(readFileName, 'r') as asmblrFile, open(writeFileName, 'w') as binFile:
     for line in asmblrFile:
         tokens = line.split(' ');
         #print(tokensToBin(tokens));
-        binFile.write(tokensToBin(tokens) + '\n');
+        if (tokens[0] != '#'):  # Lines starting with a # are considered comments
+            binFile.write(tokensToBin(tokens) + '\n');
         
 
 
