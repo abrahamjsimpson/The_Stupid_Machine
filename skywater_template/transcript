@@ -13,27 +13,3 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project 1BitProcessor_rtl
-# Compile of OneBitProcessor_tb.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# Load canceled
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:56:16 on Oct 26,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-run
-#                    0 << Starting the Simulation
-# ** Warning: (vsim-7) Failed to open readmem file "test.1bin" in read mode.
-# No such file or directory. (errno = ENOENT)    : /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v(36)
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb
-# Compile of OneBitProcessor_tb.v failed with 2 errors.
-# Compile of OneBitProcessor_tb.v failed with 5 errors.
-# Compile of OneBitProcessor_tb.v failed with 3 errors.
-# Compile of OneBitProcessor_tb.v failed with 2 errors.
-# Compile of OneBitProcessor_tb.v failed with 1 errors.
-# Compile of OneBitProcessor_tb.v failed with 1 errors.
-# Compile of OneBitProcessor_tb.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# End time: 21:27:18 on Oct 26,2022, Elapsed time: 0:31:02
-# Errors: 3118, Warnings: 1
