@@ -42,16 +42,17 @@ BIN_SUFFIX = '1bin';
 # Convert register name to 4-bit reigster address.
 def regNameToAddr(name):               
     shift = 0;
-    if name.lower()[0] == 'h':  # Constant
-        shift = 0;
-    elif name.lower()[0] == 'i':  # Input Regs
+    # if name.lower()[0] == 'h':  # Constant
+        # shift = 0;
+    if name.lower()[0] == 'i':  # Input Regs
         shift = 1;
     elif name.lower()[0] == 'o':  # Output Regs
         shift = 3;
     elif name.lower()[0] == 'r':  # Internal Regs
         shift = 10;
-        
-    return "{0:b}".format(int(name.rstrip()[-1]) + shift).zfill(4);  # FIXME will not work for 'high' FIXME FIXME -==============================
+    else:  # Stopgap solution for referring to constant FIXME
+        return '0000';        
+    return "{0:b}".format(int(name.rstrip()[-1]) + shift).zfill(4);
 
 # Convert array of assembly tokens (as strings) into the corresponding binary instruction
 def tokensToBin(tokens):
