@@ -1,5 +1,4 @@
-# Standby: wait for in1 to go low to signal beginning of signal
-BRANCH IN1 + 0
+BRANCH IN1 + 0  # Standby: wait for in1 to go low to signal beginning of signal
 NAND OUT5 OUT5 REG0
 NAND REG0 REG0 OUT6
 NAND OUT4 OUT4 REG0
@@ -14,5 +13,4 @@ NAND OUT0 OUT0 REG0
 NAND REG0 REG0 OUT1
 NAND IN0 IN0 REG0
 NAND REG0 REG0 OUT0
-# repeat: back to the beginning
-BRANCH HIGH - 14
+BRANCH HIGH - 15 # repeat: back to the beginning
