@@ -34,6 +34,7 @@
 # Number shall begin with either a + (to advance p.c.) or a - (to regress). There shall be a space between the sign (+ or -) and the number.
 #
 # Lines starting with a # are considered comments and are not assembled
+# In-line comments are also supported: all text on a line to the right of a # is ignored by the assembler
 
 
 import sys;
@@ -85,7 +86,8 @@ print("Converting " + sys.argv[1] + ' to ' + writeFileName);
 with open(readFileName, 'r') as asmblrFile, open(writeFileName, 'w') as binFile:  # opens both files
     # Iterate over all of the lines in the file
     for line in asmblrFile:
-        tokens = line.split(' ');
+        code = line.split('#');  # Remove in-line comments
+        tokens = code[0].split(' ');  # Tokenize code
         #print(tokensToBin(tokens));
         if (tokens[0] != '#'):  # Lines starting with a # are considered comments
             binFile.write(tokensToBin(tokens) + '\n');
