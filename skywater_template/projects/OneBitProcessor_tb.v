@@ -7,23 +7,29 @@ Tests for the OneBitProcessor and associated sub-modules
 */
 `timescale 1 ns / 100 ps
 
+// Macros
+//`define ABS_FILEPATH "ur path here"
+
 module OneBitProcessor_tb;
 
 	reg clk;
 	initial begin
 		$display($time, " << Starting the Simulation");
+/*
 		$display("1 as bin:");
 		$display("%b", "1");  // 00110001
 		$display("0 as bin:");
 		$display("%b", "0");  //00110000
 		$display("newline as bin:");
 		$display("%b", "\n");  //00001010
+*/
 		clk = 0;
 		forever #5 clk = ~clk;
 	end
 
-	// Maximum number if instructions that any test will load
-	integer MAX_INSTRUCTION_LENGTH = 5;
+	parameter INSTRUCTION_LENGTH = 13;
+	parameter OUT_REGS = 7;
+	parameter IN_REGS = 2;
 
 	//  TEST 1:  ===============================================================================
 
@@ -109,7 +115,7 @@ module OneBitProcessor_tb;
 		
 	end
 
-	// TEST 2: Run a simple program  ==============================================================
+	// TEST 2: Run a simple program: shift register  ==============================================================
 	// inputs to the DUT
 	reg reset2;
 	reg enable2;
@@ -124,19 +130,33 @@ module OneBitProcessor_tb;
 		.inReg(input_signals2),
 		.outReg(regs_out2));
 
+	// FileIO vars
 	integer fd_test2;
+	//reg[640*8:0] errorMessage;
 	integer lineNo; 
 	reg[8*13:1] instructions2;
 	reg[12:0] binrep[5:0];
-	integer i2, j2;
+
+	// genaral test vars
+	integer i2, j2;  // for loop vars
+	parameter test2_prog_length = 16;  // num of instructions in program for test2
 
 	initial begin
 		lineNo = 0;
 		// load instructions from file
-		fd_test2 = $fopen(absolute file path, "r");
+		//fd_test2 = $fopen(`ABS_FILEPATH);
+		fd_test2 = $fopen(Absolute path, "r");
+		
+		// For debugging:
+		//$display("file handler: %d", fd_test2);
+		//$ferror(fd_test2, errorMessage);
+		//$display("%s", errorMessage);
+
+
+		//fd_test2 = $fopen("./../Assembler/test.1bin");
 		while (! $feof(fd_test2)) begin
 			$fgets(instructions2, fd_test2);
-			//instructions2[count] = $fscanf(fd_test2, "%b", instructions2[count]);
+			instructions2[count] = $fscanf(fd_test2, "%b", instructions2[count]);
 			if ((instructions2[8:1] != "\n") && (instructions2[8:1] != 'b00000000)) begin  // Every other line is a newline and zeros, and the last line is entirely zeros. Ignore these lines
 				$display("%s", instructions2);
 				$display("%d", lineNo);
@@ -160,6 +180,240 @@ module OneBitProcessor_tb;
 				$display("%b", binrep[i2][j2]);  // This prints/returns the bits in the correct order
 			end
 		end
+
+		// Reset dut
+		reset2 = 0;
+		#10 reset2 = 1;
+		#10 reset2 = 0;
+
+		$display("got here");
+		// Loading instructions into dut
+		enable2 = 1;
+		for (i2 = 0; i2 < test2_prog_length; i2 = i2 + 1) begin
+			for (j2 = (INSTRUCTION_LENGTH - 1); j2 >= 0; j2 = j2 - 1) begin
+				#10 input_signals2[0] = binrep[i2][j2];
+			end
+		end
+		enable2 = 0;
+		input_signals2[0] = 0;
+
+		$display("didn't get here");  // Debug FIXME FIXME FIXME
+
+		// execution of program begins
+		// Should begin on instruction 0 waiting for IN1 to be low. Kep high for a few cycles to make sure it works
+		input_signals2[1] = 1;
+
+		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
+			if (regs_out2[i] == 0)  // all out regs should be set to 0 following reset
+				$display("Test passed");
+			else
+				$display("WARNING: Test 2 Failed");
+		end
+
+		#10 input_signals2[0] = 1;
+		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
+			if (regs_out2[i] == 0)  // should still be zero since exec is paused w/ IN0 high
+				$display("Test passed");
+			else
+				$display("WARNING: Test 2 Failed");
+		end
+
+		// just one more time
+		#10 input_signals2[0] = 0;
+		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
+			if (regs_out2[i] == 0)  // should still be zero since exec is paused w/ IN0 high
+				$display("Test passed");
+			else
+				$display("WARNING: Test 2 Failed");
+		end
+		#(10 * test2_prog_length);
+		// NOW start shifting
+		input_signals2[1] = 0;
+		input_signals2[0] = 0;
+		#10;
+		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
+			if (regs_out2[i] == 0)  // Shifting, but in is 0, so all should still be 0
+				$display("Test passed");
+			else
+				$display("WARNING: Test 2 Failed");
+		end
+
+		input_signals2[0] = 1;
+		#(10 * test2_prog_length);
+		if (regs_out2[0] == 1)  // OUT0 should be high now
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		for (i2 = 1; i < OUT_REGS; i = i + 1) begin 
+			if (regs_out2[i] == 0) // All other OUTs should be low still
+				$display("Test passed");
+			else
+				$display("WARNING: Test 2 Failed");
+		end
+
+		input_signals2[0] = 0;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0000010)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		input_signals2[0] = 1;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0000101)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// leave at 1
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0001011)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// leave at 1
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// PAUSE: make sure it branches
+		input_signals2[1] = 1;
+		#10;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#10;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#20;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#400;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		input_signals2[0] = 0;  // still paused
+		#10;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#10;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#20;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#400;
+		if (regs_out2 == 'b0010111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// resume shifting
+		input_signals2[1] = 0;
+
+		// back to 0
+		input_signals2[0] = 0;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0101110)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// back to 1
+		input_signals2[0] = 1;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1011101)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// hold at 1
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0111011)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// back to 0
+		input_signals2[0] = 0;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1110110)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// back to 1
+		input_signals2[0] = 1;
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1101101)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		// hold 1 for ramaining test
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1011011)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0110111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1101111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1011111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0111111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b1111111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+		if (regs_out2 == 'b1111111)
+			$display("Test passed");
+		else
+			$display("WARNING: Test 2 Failed");
+
+		$display("Test 2 finished");
 
 	end
 
