@@ -145,6 +145,7 @@ module OneBitProcessor_tb;
 		lineNo = 0;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
+		//fd_test2 = $fopen("./../Assembler/test.1bin");
 		fd_test2 = $fopen("/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/Assembler/shift_reg.1bin", "r");
 		
 		// For debugging:
@@ -152,16 +153,13 @@ module OneBitProcessor_tb;
 		//$ferror(fd_test2, errorMessage);
 		//$display("%s", errorMessage);
 
-
-		//fd_test2 = $fopen("./../Assembler/test.1bin");
 		while (! $feof(fd_test2)) begin
 			$fgets(instructions2, fd_test2);
-			//instructions2[count] = $fscanf(fd_test2, "%b", instructions2[count]);
 			if ((instructions2[8:1] != "\n") && (instructions2[8:1] != 'b00000000)) begin  // Every other line is a newline and zeros, and the last line is entirely zeros. Ignore these lines
-				$display("%s", instructions2);
-				$display("%d", lineNo);
+				//$display("%s", instructions2);
+				//$display("%d", lineNo);
 				for (i2 = 0; i2 < 13; i2 = i2 + 1) begin
-					$display("%b %d", instructions2[((i2*8)+1)+:8], i2); // print current char in binary
+					//$display("%b %d", instructions2[((i2*8)+1)+:8], i2); // print current char in binary
 					if (instructions2[((i2*8)+1)+:8] == 8'b00110001) begin  // "1" string in binary
 						binrep[lineNo][i2] = 1;
 					end else begin
@@ -173,6 +171,8 @@ module OneBitProcessor_tb;
 		end // while file not ended
 		$fclose(fd_test2);
 
+/*
+		// For debug purposes: print out the bits in order
 		$display("Contents of binrep:");
 		for (i2 = 0; i2 < 6; i2 = i2 + 1) begin
 			$display("%b", binrep[i2]);
@@ -180,13 +180,12 @@ module OneBitProcessor_tb;
 				$display("%b", binrep[i2][j2]);  // This prints/returns the bits in the correct order
 			end
 		end
-
+*/
 		// Reset dut
 		reset2 = 0;
 		#10 reset2 = 1;
 		#10 reset2 = 0;
 
-		$display("got here");
 		// Loading instructions into dut
 		enable2 = 1;
 		for (i2 = 0; i2 < test2_prog_length; i2 = i2 + 1) begin
@@ -196,8 +195,6 @@ module OneBitProcessor_tb;
 		end
 		enable2 = 0;
 		input_signals2[0] = 0;
-
-		$display("didn't get here");  // Debug FIXME FIXME FIXME
 
 		// execution of program begins
 		// Should begin on instruction 0 waiting for IN1 to be low. Kep high for a few cycles to make sure it works

@@ -33,5 +33,5 @@ In:	clock
 In:	synchronous reset  
 In:	Enable write to Instruction Memory  
 (12 signal pins, plus two for voltage supply and ground, for a total of 14 pins)  
-On the rising edge of the clock when reset is asserted, all registers and all instruction memory positions are reset to 0. When enable write is asserted, on each clock edge the value of reg0 is read into instruction memory, beginning at instruction 0, position 0 and proceeding across each bit of each instruction in order until enable write is deasserted, at which point execution of the program begins.
+On the rising edge of the clock when reset is asserted, all registers and all instruction memory positions are reset to 0, and the instruction counter is set to zero. When enable write is asserted, on each clock edge the value of reg0 is read into instruction memory, beginning at instruction 0, position 0 and proceeding across each bit of each instruction in order until enable write is deasserted, at which point execution of the program begins at instruction 0.
 
