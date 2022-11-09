@@ -140,13 +140,14 @@ module OneBitProcessor_tb;
 	// genaral test vars
 	integer i2, j2;  // for loop vars
 	parameter test2_prog_length = 16;  // num of instructions in program for test2
+	reg boolVal;
 
 	initial begin
 		lineNo = 0;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(absolute path to shift register file, "r");
+		fd_test2 = $fopen(Absolute path here, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
@@ -200,54 +201,83 @@ module OneBitProcessor_tb;
 		// Should begin on instruction 0 waiting for IN1 to be low. Kep high for a few cycles to make sure it works
 		input_signals2[1] = 1;
 
+		boolVal = '0;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // all out regs should be set to 0 following reset
-				$display("Test passed");
+				;//$display("Test passed: regs_out2[%d] is 0", i);
 			else
-				$display("WARNING: Test 2 Failed");
+				boolVal = '1; //$display("WARNING: Test 2 Failed some out regs were not initially 0");
 		end
+		// Report if some of the out regs are not 0
+		if (boolVal)
+			$display("WARNING: Test 2.1 failed: not all out regs were initialized to 0");
+		else 
+			$display("Test 2.1 passed");
 
+		boolVal = '0;
+		#20;
+		$display("%b", dut2.prog_counter);  // after any amount of time passes after reset, prog_couter is unknown (xs)
 		#10 input_signals2[0] = 1;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // should still be zero since exec is paused w/ IN0 high
-				$display("Test passed");
+				;  // Do nothing. Having an else is tripped even if the condition evals to x
 			else
-				$display("WARNING: Test 2 Failed");
+				boolVal = '1;
 		end
+		if (boolVal)
+			$display("WARNING: Test 2.2 failed: did not hold out regs at 0 (software problem?)");
+		else 
+			$display("Test 2.2 passed");
 
 		// just one more time
+		boolVal = '0;
 		#10 input_signals2[0] = 0;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // should still be zero since exec is paused w/ IN0 high
-				$display("Test passed");
+				; // Do nothing. Having an else is tripped even if the condition evals to x
 			else
-				$display("WARNING: Test 2 Failed");
+				boolVal = '1;
 		end
+		if (boolVal)
+			$display("WARNING: Test 2.3 failed: did not hold out regs at 0 (software problem?)");
+		else 
+			$display("Test 2.3 passed");
+
+
 		#(10 * test2_prog_length);
 		// NOW start shifting
 		input_signals2[1] = 0;
 		input_signals2[0] = 0;
-		#10;
+		#(10 * test2_prog_length);
+		boolVal = '0;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // Shifting, but in is 0, so all should still be 0
-				$display("Test passed");
+				; // Do nothing. Having an else is tripped even if the condition evals to x
 			else
-				$display("WARNING: Test 2 Failed");
+				boolVal = '1;
 		end
+		if (boolVal)
+			$display("WARNING: Test 2.4 failed: 1st shift should still leave all out regs 0 (software problem?)");
+		else 
+			$display("Test 2.4 passed");
 
 		input_signals2[0] = 1;
 		#(10 * test2_prog_length);
 		if (regs_out2[0] == 1)  // OUT0 should be high now
-			$display("Test passed");
+			$display("Test 2.5 passed");
 		else
-			$display("WARNING: Test 2 Failed");
-
+			$display("WARNING: Test 2.5 Failed: Out0 should be 1, was %b.", regs_out2[0]);
+		boolVal = '0;
 		for (i2 = 1; i < OUT_REGS; i = i + 1) begin 
 			if (regs_out2[i] == 0) // All other OUTs should be low still
-				$display("Test passed");
+				; // Do nothing. Having an else is tripped even if the condition evals to x
 			else
-				$display("WARNING: Test 2 Failed");
+				boolVal = '1;
 		end
+		if (boolVal)
+			$display("WARNING: Test 2.5 failed: 12nd shift should have last 6 regs 0 (software problem?)");
+		else 
+			$display("Test 2.5 passed");
 
 		input_signals2[0] = 0;
 		#(10 * test2_prog_length);

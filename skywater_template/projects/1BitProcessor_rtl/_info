@@ -10,59 +10,59 @@ z2
 cModel Technology
 d/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template
 T_opt
-!s110 1667715248
-V?S<l^FAz:jCXb2W7WkdHR2
+!s110 1667974557
+V<W:K4[WfYF8_eHWmTJS]I3
 04 18 4 work OneBitProcessor_tb fast 0
-=1-18c04d8fb2dc-636750b0-dd68-3269d0
+=1-18c04d8cd537-636b459c-da165-1fad0f
 o-quiet -auto_acc_if_foreign -work 1BitProcessor_rtl +acc
 Z0 tCvgOpt 0
 n@_opt
 OL;O;2019.4;69
 vOneBitProcessor
-!s110 1667715214
+Z1 !s110 1667974554
 !i10b 1
 !s100 zK[g>`7;d>UzkYZ9OA<]U1
 !s11b f1NI3L`8m@CX?lIk=kEo<1
 IDHgONiaG[GLDj?KG`;;j12
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 d/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects
 w1667715211
 8/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
 F/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
 !i122 -1
 L0 2
-Z3 OL;L;2019.4;69
+Z4 OL;L;2019.4;69
 r1
 !s85 0
 31
-!s108 1667715214.000000
+Z5 !s108 1667974554.000000
 !s107 /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v|
 !s90 -reportprogress|300|-work|1BitProcessor_rtl|-vopt|-stats=none|/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v|
 !i113 0
-Z4 o-work 1BitProcessor_rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 o-work 1BitProcessor_rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R0
 n@one@bit@processor
 vOneBitProcessor_tb
-!s110 1667701425
-!i10b 1
-!s100 ijoRDA2_A27LmAn=HEL2c0
-!s11b BTa0<1VYRZRd2z5P;z5cd1
-IjYHS4X<8Uz?gm4VkkZ<l^1
 R1
+!i10b 1
+!s100 Plh[XbnUT<EPIB9NL;deZ1
+!s11b <Hd]K]cjIIeF5ZVcoIKUh2
+IYb<LDIRo>8<6nMiLfFF^a3
 R2
-w1667701418
+R3
+w1667974543
 8/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
 F/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
 !i122 -1
 L0 13
-R3
+R4
 r1
 !s85 0
 31
-!s108 1667701424.000000
+R5
 !s107 /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v|
 !s90 -reportprogress|300|-work|1BitProcessor_rtl|-vopt|-stats=none|/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v|
 !i113 0
-R4
+R6
 R0
 n@one@bit@processor_tb

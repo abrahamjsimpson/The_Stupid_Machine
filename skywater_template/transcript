@@ -13,346 +13,17 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project 1BitProcessor_rtl
-# Compile of OneBitProcessor_tb.v failed with 1 errors.
 # Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:17:47 on Nov 05,2022
+# Start time: 21:36:08 on Nov 08,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
 run
 #                    0 << Starting the Simulation
-# 0001000000000
-#           0
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# 1100010001010
-#           1
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1101010101001
-#           2
-# 00110001           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011101111010
-#           3
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010101000
-#           4
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011001101010
-#           5
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100111
-#           6
-# 00110001           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010101011010
-#           7
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100110
-#           8
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010001001010
-#           9
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100101
-#          10
-# 00110001           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1001100111010
-#          11
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100100
-#          12
-# 00110000           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1000100011010
-#          13
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100011
-#          14
-# 00110001           0
-# 00110001           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 0000010001110
-#          15
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# Contents of binrep:
-# 0001000000000
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 1100010001010
-# 1
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1101010101001
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 1
-# 1011101111010
-# 1
-# 0
-# 1
-# 1
-# 1
-# 0
-# 1
-# 1
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1101010101000
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1011001101010
-# 1
-# 0
-# 1
-# 1
-# 0
-# 0
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# got here
-run
-# didn't get here
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -381,342 +52,371 @@ run
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:37:30 on Nov 08,2022, Elapsed time: 0:01:22
+# Errors: 20, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:37:30 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:38:16 on Nov 08,2022, Elapsed time: 0:00:46
+# Errors: 26, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:38:16 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:38:37 on Nov 08,2022, Elapsed time: 0:00:21
+# Errors: 32, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:38:37 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+run
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:39:32 on Nov 08,2022, Elapsed time: 0:00:55
+# Errors: 49, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:39:32 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:42:17 on Nov 08,2022, Elapsed time: 0:02:45
+# Errors: 561, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:42:17 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:42:32 on Nov 08,2022, Elapsed time: 0:00:15
+# Errors: 307, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:42:32 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:42:55 on Nov 08,2022, Elapsed time: 0:00:23
+# Errors: 327, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:42:55 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test passedwfweg
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:43:48 on Nov 08,2022, Elapsed time: 0:00:53
+# Errors: 373, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:43:48 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:44:05 on Nov 08,2022, Elapsed time: 0:00:17
+# Errors: 344, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:44:05 on Nov 08,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
 run
 #                    0 << Starting the Simulation
-# 0001000000000
-#           0
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# 1100010001010
-#           1
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1101010101001
-#           2
-# 00110001           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011101111010
-#           3
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010101000
-#           4
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011001101010
-#           5
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100111
-#           6
-# 00110001           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010101011010
-#           7
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100110
-#           8
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010001001010
-#           9
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100101
-#          10
-# 00110001           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1001100111010
-#          11
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100100
-#          12
-# 00110000           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1000100011010
-#          13
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100011
-#          14
-# 00110001           0
-# 00110001           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 0000010001110
-#          15
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# Contents of binrep:
-# 0001000000000
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 1100010001010
-# 1
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1101010101001
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 1
-# 1011101111010
-# 1
-# 0
-# 1
-# 1
-# 1
-# 0
-# 1
-# 1
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1101010101000
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1011001101010
-# 1
-# 0
-# 1
-# 1
-# 0
-# 0
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# got here
-# didn't get here
+# Testing that output regs are initially zero
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -747,10 +447,137 @@ run
 # Test 2 finished
 # Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:20:42 on Nov 05,2022, Elapsed time: 0:02:55
-# Errors: 2, Warnings: 1
+# End time: 21:44:41 on Nov 08,2022, Elapsed time: 0:00:36
+# Errors: 362, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:20:42 on Nov 05,2022
+# Start time: 21:44:41 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:45:26 on Nov 08,2022, Elapsed time: 0:00:45
+# Errors: 375, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:45:26 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:45:46 on Nov 08,2022, Elapsed time: 0:00:20
+# Errors: 380, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:45:46 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed trhjyu
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:48:45 on Nov 08,2022, Elapsed time: 0:02:59
+# Errors: 452, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:48:45 on Nov 08,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
@@ -758,332 +585,8 @@ vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
 #    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
 run
 #                    0 << Starting the Simulation
-# 0001000000000
-#           0
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# 1100010001010
-#           1
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1101010101001
-#           2
-# 00110001           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011101111010
-#           3
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010101000
-#           4
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011001101010
-#           5
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100111
-#           6
-# 00110001           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010101011010
-#           7
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100110
-#           8
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010001001010
-#           9
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100101
-#          10
-# 00110001           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1001100111010
-#          11
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100100
-#          12
-# 00110000           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1000100011010
-#          13
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100011
-#          14
-# 00110001           0
-# 00110001           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 0000010001110
-#          15
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# Contents of binrep:
-# 0001000000000
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 0
-# 1100010001010
-# 1
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1101010101001
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 1
-# 1011101111010
-# 1
-# 0
-# 1
-# 1
-# 1
-# 0
-# 1
-# 1
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1101010101000
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# 0
-# 0
-# 1011001101010
-# 1
-# 0
-# 1
-# 1
-# 0
-# 0
-# 1
-# 1
-# 0
-# 1
-# 0
-# 1
-# 0
-# WARNING: Test 2 Failed
+# Testing that output regs are initially zero
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -1113,258 +616,20 @@ run
 # Test 2 finished
 # Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:22:03 on Nov 05,2022, Elapsed time: 0:01:21
-# Errors: 479, Warnings: 1
+# End time: 21:49:28 on Nov 08,2022, Elapsed time: 0:00:43
+# Errors: 428, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:22:03 on Nov 05,2022
+# Start time: 21:49:28 on Nov 08,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
 run
 #                    0 << Starting the Simulation
-# 0001000000000
-#           0
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# 1100010001010
-#           1
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1101010101001
-#           2
-# 00110001           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011101111010
-#           3
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010101000
-#           4
-# 00110000           0
-# 00110000           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1011001101010
-#           5
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110001           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110001           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100111
-#           6
-# 00110001           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010101011010
-#           7
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100110
-#           8
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1010001001010
-#           9
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110001           6
-# 00110000           7
-# 00110000           8
-# 00110000           9
-# 00110001          10
-# 00110000          11
-# 00110001          12
-# 1101010100101
-#          10
-# 00110001           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1001100111010
-#          11
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110001           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110001           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100100
-#          12
-# 00110000           0
-# 00110000           1
-# 00110001           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 1000100011010
-#          13
-# 00110000           0
-# 00110001           1
-# 00110000           2
-# 00110001           3
-# 00110001           4
-# 00110000           5
-# 00110000           6
-# 00110000           7
-# 00110001           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110001          12
-# 1101010100011
-#          14
-# 00110001           0
-# 00110001           1
-# 00110000           2
-# 00110000           3
-# 00110000           4
-# 00110001           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110001           9
-# 00110000          10
-# 00110001          11
-# 00110001          12
-# 0000010001110
-#          15
-# 00110000           0
-# 00110001           1
-# 00110001           2
-# 00110001           3
-# 00110000           4
-# 00110000           5
-# 00110000           6
-# 00110001           7
-# 00110000           8
-# 00110000           9
-# 00110000          10
-# 00110000          11
-# 00110000          12
-# WARNING: Test 2 Failed
+# Testing that output regs are initially zero
+# Test 2 passed
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -1394,50 +659,65 @@ run
 # Test 2 finished
 # Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:22:43 on Nov 05,2022, Elapsed time: 0:00:40
-# Errors: 254, Warnings: 1
+# End time: 21:49:57 on Nov 08,2022, Elapsed time: 0:00:29
+# Errors: 424, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:22:43 on Nov 05,2022
+# Start time: 21:49:57 on Nov 08,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
 run
 #                    0 << Starting the Simulation
-# 0001000000000
-#           0
-# 1100010001010
-#           1
-# 1101010101001
-#           2
-# 1011101111010
-#           3
-# 1101010101000
-#           4
-# 1011001101010
-#           5
-# 1101010100111
-#           6
-# 1010101011010
-#           7
-# 1101010100110
-#           8
-# 1010001001010
-#           9
-# 1101010100101
-#          10
-# 1001100111010
-#          11
-# 1101010100100
-#          12
-# 1000100011010
-#          13
-# 1101010100011
-#          14
-# 0000010001110
-#          15
+# Testing that output regs are initially zero
+# Test 2 passed
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 21:53:01 on Nov 08,2022, Elapsed time: 0:03:04
+# Errors: 2004, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 21:53:01 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -1467,18 +747,22 @@ run
 # Test 2 finished
 # Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:23:47 on Nov 05,2022, Elapsed time: 0:01:04
-# Errors: 257, Warnings: 1
+# End time: 21:54:41 on Nov 08,2022, Elapsed time: 0:01:40
+# Errors: 2789, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:23:47 on Nov 05,2022
+# Start time: 21:54:41 on Nov 08,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
 run
 #                    0 << Starting the Simulation
-# WARNING: Test 2 Failed
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -1506,50 +790,25 @@ run
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # Test 2 finished
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v failed with 9 errors.
-# Compile of OneBitProcessor.v failed with 10 errors.
-# Compile of OneBitProcessor.v failed with 10 errors.
-# Compile of OneBitProcessor.v failed with 12 errors.
-# Compile of OneBitProcessor.v failed with 10 errors.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-run
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v failed with 1 errors.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor.v failed with 6 errors.
-# Compile of OneBitProcessor.v failed with 5 errors.
-# Compile of OneBitProcessor.v failed with 3 errors.
-# Compile of OneBitProcessor.v failed with 2 errors.
-# Compile of OneBitProcessor.v failed with 8 errors.
-# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 00:14:07 on Nov 06,2022, Elapsed time: 3:50:20
-# Errors: 17614, Warnings: 1
+# End time: 21:58:57 on Nov 08,2022, Elapsed time: 0:04:16
+# Errors: 4877, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 00:14:07 on Nov 06,2022
+# Start time: 21:58:57 on Nov 08,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 157
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
 run
 #                    0 << Starting the Simulation
-# WARNING: Test 2 Failed
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2 Failed trhjyu
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
@@ -1577,5 +836,441 @@ run
 # WARNING: Test 2 Failed
 # WARNING: Test 2 Failed
 # Test 2 finished
-# End time: 00:14:53 on Nov 06,2022, Elapsed time: 0:00:46
-# Errors: 9893, Warnings: 1
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:08:41 on Nov 08,2022, Elapsed time: 1:09:44
+# Errors: 6765, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:08:41 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 sould be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:09:25 on Nov 08,2022, Elapsed time: 0:00:44
+# Errors: 5144, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:09:25 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:11:07 on Nov 08,2022, Elapsed time: 0:01:42
+# Errors: 5137, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:11:07 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# xxxxxxxxxx
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:11:49 on Nov 08,2022, Elapsed time: 0:00:42
+# Errors: 5468, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:11:49 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# 0000000000
+# Testing that output regs are initially zero
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:12:25 on Nov 08,2022, Elapsed time: 0:00:36
+# Errors: 5541, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:12:25 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# 0000000000
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:13:33 on Nov 08,2022, Elapsed time: 0:01:08
+# Errors: 5706, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:13:33 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Test 2.1 passed
+# xxxxxxxxxx
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:13:57 on Nov 08,2022, Elapsed time: 0:00:24
+# Errors: 5563, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:13:57 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Test 2.1 passed
+# 0000000000
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:14:28 on Nov 08,2022, Elapsed time: 0:00:31
+# Errors: 5573, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:14:28 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Test 2.1 passed
+# xxxxxxxxxx
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Compile of OneBitProcessor_tb.v was successful.
+run
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 23:15:56 on Nov 08,2022, Elapsed time: 0:01:28
+# Errors: 5596, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 23:15:56 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 158
+run
+#                    0 << Starting the Simulation
+# Test 2.1 passed
+# xxxxxxxxxx
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# End time: 23:16:27 on Nov 08,2022, Elapsed time: 0:00:31
+# Errors: 6276, Warnings: 1
