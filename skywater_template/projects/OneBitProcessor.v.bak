@@ -4,7 +4,7 @@ module OneBitProcessor
 	input reset,
 	input en,
 	input [1:0] inReg,
-	output [6:0] outReg);
+	output reg [6:0] outReg);
 
 	parameter INSTRUCTION_LENGTH = 13;  // # of bits in an instruction
 	parameter INSTRUCTION_MEM = 1000; // # of instructions that can be stored in the processor's instruciton memory

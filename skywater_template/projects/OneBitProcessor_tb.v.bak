@@ -52,7 +52,7 @@ module OneBitProcessor_tb;
 	// Vals for test1:
 	reg[12:0] testInstr;
 	integer i;
-
+	reg testFailed;
 
 	initial begin
 		reset1 = 0;
@@ -61,19 +61,65 @@ module OneBitProcessor_tb;
 		// Test 1: Load instructions:
 
 		// Reset dut
-		reset1 = 1;
-		clk = ~clk;
-		clk = ~clk;
-		reset1 = 0;
-		//begin by loading sime arbitrart values into the instruction memory:
+		#10 reset1 = 1;
+		#10 reset1 = 0;
+
+		// Test that Reset worked
+		// Program Conter:
+		if (dut1.prog_counter == '0)
+			$display("Test 1.1.1 passed");
+		else 
+			$display("WARNING: Test 1.1 Failed: prog_counter was %d", dut1.prog_counter);
+		// Registers (that the unit controlls):
+		if (dut1.outReg == '0)
+			$display("Test 1.1.2 passed");
+		else 
+			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.prog_counter);	
+		if (dut1.internal_regs == '0)
+			$display("Test 1.1.3 passed");
+		else 
+			$display("WARNING: Test 1.1.3 Failed: internal_regs was %d", dut1.internal_regs);
+		// Instruction Mem:
+		testFailed = '0;
+		for (i = 0; i < dut1.INSTRUCTION_MEM; i = i + 1) begin
+			//$display("iteration %d, testBool %b", i, testBool);
+			if (dut1.instructions[i] == '0)
+				;//$display("%b", dut1.instructions[i]); // Need this form: if instructions is z or x then enters else
+			else begin
+				testFailed = '1;
+				$display("WARNING: Test 1.1.4 failed. instructions[%d] was %b", i, dut1.instructions[i]);
+			end
+		end
+		if (testFailed)
+			$display("WARNING: Test 1.1.4 failed. See above.");
+		else 
+			$display("Test 1.1.4 passed");
+
+		// Test 1.2: load an instruction:
 		input_signals1[0] = 1;
 		enable1 = 1;
+/*
+		#10 $display("%b", dut1.instructions[0]);
+		#10 $display("%b", dut1.instructions[0]);
+		#10 $display("%b", dut1.instructions[0]);
+		#1000 $display("%b", dut1.instructions[0]);
+*/
 		// Wait 13 periods so a full instruction is just 1s
 		#130
+
+		if (dut1.instructions[0] == 'b1111111111111)
+			$display("Test 1.2.1 passed");
+		else
+			$display("WARNING: Test 1.2.1 Failed: slot contained %b", dut1.instructions[0]);
 
 		input_signals1[0] = 0;
 		// Same as before, but 0s this time
 		#130
+
+		if (dut1.instructions[1] == 'b0000000000000 && dut1.instructions[0] == 'b1111111111111)// not overwriting
+			$display("Test 1.2.2 passed");
+		else
+			$display("WARNING: Test 1.2.2 Failed: slot0 contained %b, slot1 contained %b", dut1.instructions[0], dut1.instructions[1]);
 
 		input_signals1[0] = 0;
 		for(i = 0; i < 13; i = i + 1) begin // Now, alternate bits
