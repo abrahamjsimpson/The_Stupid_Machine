@@ -193,7 +193,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(absolute file path, "r");
+		fd_test2 = $fopen(Absolute file path, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
