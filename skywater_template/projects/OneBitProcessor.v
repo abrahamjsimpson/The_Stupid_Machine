@@ -160,9 +160,9 @@ module OneBitProcessor
 			if (en) begin
 				instructions[load_instruction_counter][load_bit_counter] = inReg[0];
 				load_bit_counter = load_bit_counter + 1;
-				if (load_bit_counter > INSTRUCTION_LENGTH) begin
+				if (load_bit_counter >= INSTRUCTION_LENGTH) begin
 					load_bit_counter = '0;
-					load_instruction_counter = load_instruction_counter + '1;
+					load_instruction_counter = load_instruction_counter + 1;
 				end
 			end
 		end // end else

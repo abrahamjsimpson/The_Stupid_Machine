@@ -58,7 +58,7 @@ module OneBitProcessor_tb;
 		reset1 = 0;
 		enable1 = 0;
 
-		// Test 1: Load instructions:
+		// Test 1.1: Test reset
 
 		// Reset dut
 		#10 reset1 = 1;
@@ -121,37 +121,171 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 1.2.2 Failed: slot0 contained %b, slot1 contained %b", dut1.instructions[0], dut1.instructions[1]);
 
-		input_signals1[0] = 0;
+		input_signals1[0] = 1;
 		for(i = 0; i < 13; i = i + 1) begin // Now, alternate bits
 			#10 input_signals1[0] = ~input_signals1[0];
 		end	
+		if (dut1.instructions[2] == 'b1010101010101)
+			$display("Test 1.2.3 passed");
+		else 
+			$display("WARNING: Test 1.2.3 failed: slot2 contained %b", dut1.instructions[2]);
 
-		input_signals1[0] = 1;
-		for(i = 0; i < 13; i = i + 1) begin // And the otehr way
+		input_signals1[0] = 0;
+		for(i = 0; i < 13; i = i + 1) begin // And the other way
 			#10 input_signals1[0] = ~input_signals1[0];
 		end	
+		if (dut1.instructions[3] == 'b0101010101010)
+			$display("Test 1.2.4 passed");
+		else 
+			$display("WARNING: Test 1.2.4 failed: slot3 contained %b", dut1.instructions[3]);
 
-		/*
-		if (dut.instruction1Loc == 1111111111111)
-			$print("MemLoc1 good");
-		else
-			$print("MemLoc1 not good");
+		// something arbitrary
+		input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#30 input_signals1[0] = 1;  // Stays on 0 for 3 clock cycles
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#50 input_signals1[0] = 0;
+		#20;  // Stay on 0 for 2 clock cycles to round out instruction with 0s
+		if (dut1.instructions[4] == 'b0011111010001)
+			$display("Test 1.2.5 passed");
+		else 
+			$display("WARNING: Test 1.2.5 failed: slot4 contained %b", dut1.instructions[3]);
 
-		if (dut.instruction2Loc == 0000000000000)
-			$print("MemLoc2 good");
+		// wait some time and then write, to make sure later addresses can also be written to
+		input_signals1[0] = 1;
+		#(130*250) input_signals1[0] = 0;  // Skipping 250 instructions puts us on location 254
+		// Check that all locations in the meantime received 
+		testFailed = 0;
+		for (i = 5; i < 254; i = i + 1) begin
+			if (dut1.instructions[i] == 'b1111111111111)
+				; // do nothing. If above evaluates to z or x it will enter the else block
+			else 
+				testFailed = 1;
+		end
+		if (testFailed)
+			$display("WARNING: Test 1.2.6 failed");
 		else
-			$print("MemLoc2 not good");
+			$display("Test 1.2.6 passed");
 
-		if (dut.instruction1Loc == 1010101010101)
-			$print("MemLoc3 good");
-		else
-			$print("MemLoc3 not good");
+		// now test that we can write to a later address:
+		#10 input_signals1[0] = 1;
+		#30 input_signals1[0] = 0;  // Stays on 1 for 3 clock cycles
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#50 input_signals1[0] = 1;
+		#20;  // Stay on 1 for 2 clock cycles to round out instruction with 0s
+		if (dut1.instructions[255] == 'b1100000101110)
+			$display("Test 1.2.7 passed");
+		else 
+			$display("WARNING: Test 1.2.7 failed: slot254 contained %b", dut1.instructions[254]);
 
-		if (dut.instruction1Loc == 0101010101010)
-			$print("MemLoc4 good");
+		// Just in case, test that it can write to the last instruction location
+		//#(((dut1.INSTRUCTION_MEM - (255 - 4))*13 - 1)*10) input_signals1[0] = 0; // wait until the start of the last instruction slot
+		#(129890 - $time) input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#40 input_signals1[0] = 0;
+		#30 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10;
+		if (dut1.instructions[999] == 'b1010001111010)
+			$display("Test 1.2.8 passed");
+		else 
+			$display("WARNING: Test 1.2.8 failed: slot999 contained %b", dut1.instructions[999]);
+
+
+		// Test 1.3: Testing the Program Couner
+		reset1 = 0;
+		enable1 = 0;
+		#10 reset1 = 1;
+		#10 reset1 = 0;
+
+		// Write instructions to iterate over:
+		enable1 = 1;
+		// 1101010101010: NAND internal Reg0 w/ itself into itself
+		input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		// 1001100110011: NAND output Reg0 w/ itself into itself
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		// 1000100010100: NAND input reg0 w/ itself into output reg1
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		// 1010001000100: NAND output reg1 w/ itself into itself
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 enable1 = 0;
+
+		// problem: Need an extra cycle between when enable is deasserted and when program execution 
+		// begins to make sure prog_counter starts at 0 and not whatever prog_counter_return happens to be
+		// after writing
+
+		// check that prog_counter resets to 0
+		if (dut1.prog_counter == 0)
+			$display("Test 1.3.1 passed");
 		else
-			$print("MemLoc4 not good");
-		*/
+			$display("ERROR: Test 1.3.1 failed: prog_counter was %d", dut1.prog_counter);
+
+		#10;
+		if (dut1.prog_counter == 1)
+			$display("Test 1.3.2 passed");
+		else
+			$display("ERROR: Test 1.3.2 failed: prog_counter was %d", dut1.prog_counter);
+
+		#10;
+		if (dut1.prog_counter == 2)
+			$display("Test 1.3.3 passed");
+		else
+			$display("ERROR: Test 1.3.3 failed: prog_counter was %d", dut1.prog_counter);
+	
+
 
 
 		// Test 2: load a simple program
