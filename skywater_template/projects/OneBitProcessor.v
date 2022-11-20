@@ -26,6 +26,8 @@ module OneBitProcessor
 
 	reg [(PROG_COUNTER_LENGTH - 1):0] prog_counter;
 	reg [(NUM_INTERNAL_REGS - 1):0] internal_regs;
+
+	//reg en_trigger;  // Add extra cycle before prog_counter starts taking values
 	
 	// wires
 	wire [(PROG_COUNTER_LENGTH - 1):0] prog_count_return, prog_count_out;
@@ -55,11 +57,22 @@ module OneBitProcessor
 
 	//updating program counter
 	assign prog_count_out = prog_counter;
+/*
+	always @ (negedge en) begin
+		en_trigger = 1;
+	end
+*/
 	always @ (posedge clk) begin
 		if (reset) begin
 			prog_counter = 0;
 		end else  begin 
 			if (!en) begin
+/*
+				if (en_trigger) begin
+					en_trigger = 0;  // Give the processor a spare cycle before starting execution
+					prog_counter = 0;
+				end else
+*/
 				prog_counter = prog_count_return;
 			end
 		end

@@ -206,7 +206,7 @@ module OneBitProcessor_tb;
 		// Write instructions to iterate over:
 		enable1 = 1;
 		// 1101010101010: NAND internal Reg0 w/ itself into itself
-		input_signals1[0] = 0;
+		input_signals1[0] = 1;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
@@ -218,10 +218,9 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
-		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
 		// 1001100110011: NAND output Reg0 w/ itself into itself
 		#10 input_signals1[0] = 1;
-		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
@@ -232,12 +231,9 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 1;
 		// 1000100010100: NAND input reg0 w/ itself into output reg1
-		#10 input_signals1[0] = 0;
-		#10 input_signals1[0] = 0;
-		#10 input_signals1[0] = 1;
-		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
@@ -247,7 +243,15 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
 		// 1010001000100: NAND output reg1 w/ itself into itself
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
@@ -257,10 +261,7 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
-		#10 input_signals1[0] = 0;
-		#10 input_signals1[0] = 1;
-		#10 input_signals1[0] = 0;
-		#10 input_signals1[0] = 1;
+
 		#10 enable1 = 0;
 
 		// problem: Need an extra cycle between when enable is deasserted and when program execution 
@@ -284,7 +285,6 @@ module OneBitProcessor_tb;
 			$display("Test 1.3.3 passed");
 		else
 			$display("ERROR: Test 1.3.3 failed: prog_counter was %d", dut1.prog_counter);
-	
 
 
 
@@ -327,7 +327,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(Absolute File Path, "r");
+		fd_test2 = $fopen(your absolute file path here, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
@@ -370,7 +370,7 @@ module OneBitProcessor_tb;
 		// Loading instructions into dut
 		enable2 = 1;
 		for (i2 = 0; i2 < test2_prog_length; i2 = i2 + 1) begin
-			for (j2 = (INSTRUCTION_LENGTH - 1); j2 >= 0; j2 = j2 - 1) begin
+			for (j2 = 0; j2 < INSTRUCTION_LENGTH; j2 = j2 + 1) begin
 				#10 input_signals2[0] = binrep[i2][j2];
 			end
 		end
