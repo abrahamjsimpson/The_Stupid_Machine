@@ -264,10 +264,6 @@ module OneBitProcessor_tb;
 
 		#10 enable1 = 0;
 
-		// problem: Need an extra cycle between when enable is deasserted and when program execution 
-		// begins to make sure prog_counter starts at 0 and not whatever prog_counter_return happens to be
-		// after writing
-
 		// check that prog_counter resets to 0
 		if (dut1.prog_counter == 0)
 			$display("Test 1.3.1 passed");
@@ -275,17 +271,81 @@ module OneBitProcessor_tb;
 			$display("ERROR: Test 1.3.1 failed: prog_counter was %d", dut1.prog_counter);
 
 		#10;
-		if (dut1.prog_counter == 1)
+		if (dut1.prog_counter == 1)  // Check that prog_counter properly increases
 			$display("Test 1.3.2 passed");
 		else
 			$display("ERROR: Test 1.3.2 failed: prog_counter was %d", dut1.prog_counter);
 
 		#10;
-		if (dut1.prog_counter == 2)
+		if (dut1.prog_counter == 2)  // Check that prog_counter properly increases
 			$display("Test 1.3.3 passed");
 		else
 			$display("ERROR: Test 1.3.3 failed: prog_counter was %d", dut1.prog_counter);
 
+		#10;
+		if (dut1.prog_counter == 3)  // Check that prog_counter properly increases
+			$display("Test 1.3.4 passed");
+		else
+			$display("ERROR: Test 1.3.4 failed: prog_counter was %d", dut1.prog_counter);
+
+		// Test 1.4: Test that NAND operations function correctly
+		force dut1.prog_counter = 0;
+		force dut1.outReg = 0;
+		force dut1.internal_regs = 0;
+
+		// instruction 1 inverts internal_regs[0], resulting in it being 1
+		#10;
+		if (dut1.internal_regs[0] == 1) 
+			$display("Test 1.4.1 passed");
+		else
+			$display("WARNING: Test 1.4.1 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
+
+		// invert again to make sure it goes both ways
+		force dut1.prog_counter = 0;
+		#10;
+		if (dut1.internal_regs[0] == 0) 
+			$display("Test 1.4.2 passed");
+		else
+			$display("WARNING: Test 1.4.2 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
+
+		// instruction 2 inverts out_regs[0], resulting in 1
+		#10;
+		if (regs_out1[0] == 1) 
+			$display("Test 1.4.3 passed");
+		else
+			$display("WARNING: Test 1.4.3 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
+
+		// invert again to make sure it goes both ways
+		force dut1.prog_counter = 1;
+		#10;
+		if (regs_out1[0] == 0) 
+			$display("Test 1.4.4 passed");
+		else
+			$display("WARNING: Test 1.4.4 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
+
+		// instruction 3 inverts in_reg0 into out_reg[1]
+		input_signals1[0] = 0;
+		#10;
+		if (regs_out1[1] == 1)
+			$display("Test 1.4.5 passed");
+		else
+			$display("WARNING: Test 1.4.5 failed: regs_out[1] was %b", regs_out1[1]);
+
+		// repeat above for 0
+		input_signals1[0] = 1;
+		force dut1.prog_counter = 2;
+		#10;
+		if (regs_out1[1] == 0)
+			$display("Test 1.4.6 passed");
+		else
+			$display("WARNING: Test 1.4.6 failed: regs_out[1] was %b", regs_out1[1]);
+
+		// instruction 4 inverts out_reg1 into itself 
+		#10;
+		if (regs_out1[1] == 1)
+			$display("Test 1.4.7 passed");
+		else
+			$display("WARNING: Test 1.4.7 failed: regs_out[1] was %b", regs_out1[1]); 
 
 
 		// Test 2: load a simple program
@@ -327,7 +387,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(your absolute file path here, "r");
+		fd_test2 = $fopen(your absolute filepath here, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);

@@ -140,6 +140,7 @@ module OneBitProcessor
 			if (ctrl_bit && !en) begin  // only enanle writing on NAND instructions, and disable when writing instructions to memory
 				case (reg_3_addr)
 					//  Note that writing to 'b0000 (constant reg), 'b0001, and 'b0010 (in regs) is forbidden
+/*
 					'b0011 : outReg[0] = nand_out;
 					'b0100 : outReg[1] = nand_out;
 					'b0101 : outReg[2] = nand_out;
@@ -152,6 +153,21 @@ module OneBitProcessor
 					'b1100 : internal_regs[2] = nand_out;
 					'b1101 : internal_regs[3] = nand_out;
 					'b1110 : internal_regs[4] = nand_out;
+					'b1111 : internal_regs[5] = nand_out;
+*/
+					// Correct order? (i.e. 'b[3][2][1][0])
+					'b1100 : outReg[0] = nand_out;
+					'b0010 : outReg[1] = nand_out;
+					'b1010 : outReg[2] = nand_out;
+					'b1001 : outReg[3] = nand_out;
+					'b1110 : outReg[4] = nand_out;
+					'b0001 : outReg[5] = nand_out;
+					'b0110 : outReg[6] = nand_out;
+					'b0101 : internal_regs[0] = nand_out;
+					'b1101 : internal_regs[1] = nand_out;
+					'b0011 : internal_regs[2] = nand_out;
+					'b1011 : internal_regs[3] = nand_out;
+					'b0111 : internal_regs[4] = nand_out;
 					'b1111 : internal_regs[5] = nand_out;
 				endcase
 			end  // end if (ctrl_bit)
