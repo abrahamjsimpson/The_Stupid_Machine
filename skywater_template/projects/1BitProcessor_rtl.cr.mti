@@ -1,1 +1,8 @@
+/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v {1 {vlog -work 1BitProcessor_rtl -vopt -stats=none /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v
+QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+-- Compiling module OneBitProcessor
 
+Top level modules:
+	OneBitProcessor
+
+} {} {}}

@@ -87,6 +87,7 @@ module OneBitProcessor
 	// read regs:
 	always @ * begin  // Infers a mux with constant assignment: see https://electronics.stackexchange.com/questions/240012/case-statement-without-always
 		case (reg_1_addr)
+/*
 			'b0000 : data_1 = CONST_REG;  // 0000 is the constant value, 1.
 			'b0001 : data_1 = inReg[0];
 			'b0010 : data_1 = inReg[1];
@@ -103,9 +104,27 @@ module OneBitProcessor
 			'b1101 : data_1 = internal_regs[3];
 			'b1110 : data_1 = internal_regs[4];
 			'b1111 : data_1 = internal_regs[5];
+*/
+			'b0000 : data_1 = CONST_REG;  // 0000 is the constant value, 1.
+			'b1000 : data_1 = inReg[0];
+			'b0100 : data_1 = inReg[1];
+			'b1100 : data_1 = outReg[0];
+			'b0010 : data_1 = outReg[1];
+			'b1010 : data_1 = outReg[2];
+			'b1001 : data_1 = outReg[3];
+			'b1110 : data_1 = outReg[4];
+			'b0001 : data_1 = outReg[5];
+			'b0110 : data_1 = outReg[6];
+			'b0101 : data_1 = internal_regs[0];
+			'b1101 : data_1 = internal_regs[1];
+			'b0011 : data_1 = internal_regs[2];
+			'b1011 : data_1 = internal_regs[3];
+			'b0111 : data_1 = internal_regs[4];
+			'b1111 : data_1 = internal_regs[5];
 		endcase
 
 		case (reg_2_addr)
+/*
 			'b0000 : data_2 = CONST_REG;  // 0000 is the constant value, 1.
 			'b0001 : data_2 = inReg[0];
 			'b0010 : data_2 = inReg[1];
@@ -121,6 +140,23 @@ module OneBitProcessor
 			'b1100 : data_2 = internal_regs[2];
 			'b1101 : data_2 = internal_regs[3];
 			'b1110 : data_2 = internal_regs[4];
+			'b1111 : data_2 = internal_regs[5];
+*/
+			'b0000 : data_2 = CONST_REG;  // 0000 is the constant value, 1.
+			'b1000 : data_2 = inReg[0];
+			'b0100 : data_2 = inReg[1];
+			'b1100 : data_2 = outReg[0];
+			'b0010 : data_2 = outReg[1];
+			'b1010 : data_2 = outReg[2];
+			'b1001 : data_2 = outReg[3];
+			'b1110 : data_2 = outReg[4];
+			'b0001 : data_2 = outReg[5];
+			'b0110 : data_2 = outReg[6];
+			'b0101 : data_2 = internal_regs[0];
+			'b1101 : data_2 = internal_regs[1];
+			'b0011 : data_2 = internal_regs[2];
+			'b1011 : data_2 = internal_regs[3];
+			'b0111 : data_2 = internal_regs[4];
 			'b1111 : data_2 = internal_regs[5];
 		endcase
 	end

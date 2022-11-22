@@ -289,26 +289,198 @@ module OneBitProcessor_tb;
 			$display("ERROR: Test 1.3.4 failed: prog_counter was %d", dut1.prog_counter);
 
 		// Test 1.4: Test that NAND operations function correctly
+/*
+		$display($time);
 		force dut1.prog_counter = 0;
 		force dut1.outReg = 0;
 		force dut1.internal_regs = 0;
 
 		// instruction 1 inverts internal_regs[0], resulting in it being 1
-		#10;
+		#10 $display($time);
+		$display("reg_3_addr: %d %b", dut1.reg_3_addr, dut1.reg_3_addr);
+*/
+		reset1 = 0;
+		enable1 = 0;
+		#10 reset1 = 1;
+		#10 reset1 = 0;
+
+		// Write instructions to iterate over:
+		enable1 = 1;
+		// 1101010101010: NAND internal Reg0 w/ itself into itself  (Test 1.4.1)
+		input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		// twice: make sure invert works  (Test 1.4.2)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		// 1001100110011: NAND output Reg0 w/ itself into itself (Test 1.4.3)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		//  (Test 1.4.4)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		// 1000100010100: NAND input reg0 w/ itself into output reg1 (Test 1.4.5)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		// (Test 1.4.6)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		// 1010001000100: NAND output reg1 w/ itself into itself (Test 1.4.7)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		// (Test 1.4.8)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 1 1010 0011 0101 : NAND internal0 and out0 into out2 (Test 1.4.9)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+
+		// 1 0101 1010 1100 : NAND out2 and internal0 into internal2 (Test 1.4.10)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 1 1100 0101 1111 : NAND internal2 and out2 into internal5 (Test 1.4.11)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+
+		#10 enable1 = 0;
+		#10; // Need to wait a cycle for 1st instruction to execute
+		// 1st instruction: NAND internal Reg0 w/ itself into itself
 		if (dut1.internal_regs[0] == 1) 
 			$display("Test 1.4.1 passed");
 		else
 			$display("WARNING: Test 1.4.1 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
 		// invert again to make sure it goes both ways
-		force dut1.prog_counter = 0;
+		//force dut1.prog_counter = 0;
 		#10;
 		if (dut1.internal_regs[0] == 0) 
 			$display("Test 1.4.2 passed");
 		else
 			$display("WARNING: Test 1.4.2 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
-		// instruction 2 inverts out_regs[0], resulting in 1
+		// inverts out_regs[0], resulting in 1
 		#10;
 		if (regs_out1[0] == 1) 
 			$display("Test 1.4.3 passed");
@@ -316,14 +488,14 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.4.3 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
 		// invert again to make sure it goes both ways
-		force dut1.prog_counter = 1;
+		//force dut1.prog_counter = 1;
 		#10;
 		if (regs_out1[0] == 0) 
 			$display("Test 1.4.4 passed");
 		else
 			$display("WARNING: Test 1.4.4 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
-		// instruction 3 inverts in_reg0 into out_reg[1]
+		// inverts in_reg0 into out_reg[1]
 		input_signals1[0] = 0;
 		#10;
 		if (regs_out1[1] == 1)
@@ -333,20 +505,43 @@ module OneBitProcessor_tb;
 
 		// repeat above for 0
 		input_signals1[0] = 1;
-		force dut1.prog_counter = 2;
+		//force dut1.prog_counter = 2;
 		#10;
 		if (regs_out1[1] == 0)
 			$display("Test 1.4.6 passed");
 		else
 			$display("WARNING: Test 1.4.6 failed: regs_out[1] was %b", regs_out1[1]);
 
-		// instruction 4 inverts out_reg1 into itself 
+		// inverts out_reg1 into itself 
 		#10;
 		if (regs_out1[1] == 1)
 			$display("Test 1.4.7 passed");
 		else
 			$display("WARNING: Test 1.4.7 failed: regs_out[1] was %b", regs_out1[1]); 
 
+		#10;
+		if (regs_out1[1] == 0)
+			$display("Test 1.4.8 passed");
+		else
+			$display("WARNING: Test 1.4.8 failed: regs_out[1] was %b", regs_out1[1]); 
+
+		#10;
+		if (regs_out1[2] == 1)
+			$display("Test 1.4.9 passed");
+		else
+			$display("WARNING: Test 1.4.9 failed: regs_out[2] was %b", regs_out1[2]); 
+
+		#10;
+		if (dut1.internal_regs[2] == 1)
+			$display("Test 1.4.10 passed");
+		else
+			$display("WARNING: Test 1.4.10 failed: intenal_regs[2] was %b", dut1.internal_regs[2]); 
+
+		#10;
+		if (regs_out1[5] == 0)
+			$display("Test 1.4.11 passed");
+		else
+			$display("WARNING: Test 1.4.11 failed: regs_out[5] was %b", regs_out1[5]); 
 
 		// Test 2: load a simple program
 		// First, load instructions from .1bin file
