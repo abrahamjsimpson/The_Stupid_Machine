@@ -464,6 +464,21 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 1;
 
+		// 1 0111 0010 1001 NAND out5 and input1 into out6 (Test 1.4.12)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+
 		#10 enable1 = 0;
 		#10; // Need to wait a cycle for 1st instruction to execute
 		// 1st instruction: NAND internal Reg0 w/ itself into itself
@@ -543,6 +558,16 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 1.4.11 failed: regs_out[5] was %b", regs_out1[5]); 
 
+		input_signals1[1] = 1;
+		#10;
+		if (regs_out1[6] == 1)
+			$display("Test 1.4.12 passed");
+		else
+			$display("WARNING: Test 1.4.12 failed: regs_out[6] was %b", regs_out1[6]); 
+
+
+
+
 		// Test 2: load a simple program
 		// First, load instructions from .1bin file
 		//$readmemb("test.1bin", read_in_data);
@@ -582,7 +607,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(your absolute path here, "r");
+		fd_test2 = $fopen(Your absolute path here, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);

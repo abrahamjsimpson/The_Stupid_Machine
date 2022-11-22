@@ -86,7 +86,7 @@ module OneBitProcessor
 
 	// read regs:
 	always @ * begin  // Infers a mux with constant assignment: see https://electronics.stackexchange.com/questions/240012/case-statement-without-always
-		case (reg_1_addr)  // These values are all reversed. Either change them here or reverse the -endian
+		case (reg_1_addr)
 /*
 			'b0000 : data_1 = CONST_REG;  // 0000 is the constant value, 1.
 			'b0001 : data_1 = inReg[0];
@@ -195,10 +195,10 @@ module OneBitProcessor
 					'b1100 : outReg[0] = nand_out;
 					'b0010 : outReg[1] = nand_out;
 					'b1010 : outReg[2] = nand_out;
-					'b1001 : outReg[3] = nand_out;
+					'b0110 : outReg[3] = nand_out;
 					'b1110 : outReg[4] = nand_out;
 					'b0001 : outReg[5] = nand_out;
-					'b0110 : outReg[6] = nand_out;
+					'b1001 : outReg[6] = nand_out;
 					'b0101 : internal_regs[0] = nand_out;
 					'b1101 : internal_regs[1] = nand_out;
 					'b0011 : internal_regs[2] = nand_out;

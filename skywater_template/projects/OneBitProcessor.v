@@ -111,10 +111,10 @@ module OneBitProcessor
 			'b1100 : data_1 = outReg[0];
 			'b0010 : data_1 = outReg[1];
 			'b1010 : data_1 = outReg[2];
-			'b1001 : data_1 = outReg[3];
+			'b0110 : data_1 = outReg[3];
 			'b1110 : data_1 = outReg[4];
 			'b0001 : data_1 = outReg[5];
-			'b0110 : data_1 = outReg[6];
+			'b1001 : data_1 = outReg[6];
 			'b0101 : data_1 = internal_regs[0];
 			'b1101 : data_1 = internal_regs[1];
 			'b0011 : data_1 = internal_regs[2];
@@ -195,10 +195,10 @@ module OneBitProcessor
 					'b1100 : outReg[0] = nand_out;
 					'b0010 : outReg[1] = nand_out;
 					'b1010 : outReg[2] = nand_out;
-					'b1001 : outReg[3] = nand_out;
+					'b0110 : outReg[3] = nand_out;
 					'b1110 : outReg[4] = nand_out;
 					'b0001 : outReg[5] = nand_out;
-					'b0110 : outReg[6] = nand_out;
+					'b1001 : outReg[6] = nand_out;
 					'b0101 : internal_regs[0] = nand_out;
 					'b1101 : internal_regs[1] = nand_out;
 					'b0011 : internal_regs[2] = nand_out;
