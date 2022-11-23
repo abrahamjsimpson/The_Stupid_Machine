@@ -40,11 +40,19 @@ module OneBitProcessor
 	// two muxes that have ctrl_bit as sel line:
 	assign reg_2_addr = ctrl_bit ? inst_mid : {(REG_ADDR_LENGTH){1'bz}};
 	assign reg_3_addr = ctrl_bit ? inst_bottom : {(REG_ADDR_LENGTH){1'bz}};
-	assign jump[2:0] = ctrl_bit ? {(3){1'bz}} : inst_mid[3:1];
-	assign jump[6:3] = ctrl_bit ? {(4){1'bz}} : inst_bottom;
+	assign jump [2:0] = ctrl_bit ? {(3){1'bz}} : inst_mid[3:1];
+	assign jump [6:3] = ctrl_bit ? {(4){1'bz}} : inst_bottom;
 	assign bit_6 = ctrl_bit ? 'bz : inst_mid[0];
 	// two muxes that feed into the program counter adder:
-	assign operand = (!ctrl_bit && data_1) ? jump : 'b0000001;
+	//assign operand = (!ctrl_bit && data_1) ? jump : 'b0000001;
+	// jump comes in backwards: this fixes it FIXME get -endian right instead
+	assign operand [0] = (!ctrl_bit && data_1) ? jump[6] : 1;
+	assign operand [1] = (!ctrl_bit && data_1) ? jump[5] : 0;
+	assign operand [2] = (!ctrl_bit && data_1) ? jump[4] : 0;
+	assign operand [3] = (!ctrl_bit && data_1) ? jump[3] : 0;
+	assign operand [4] = (!ctrl_bit && data_1) ? jump[2] : 0;
+	assign operand [5] = (!ctrl_bit && data_1) ? jump[1] : 0;
+	assign operand [6] = (!ctrl_bit && data_1) ? jump[0] : 0;
 
 	// determining add/subtract for program counter:
 	assign adder_ctrl = (!ctrl_bit && bit_6);

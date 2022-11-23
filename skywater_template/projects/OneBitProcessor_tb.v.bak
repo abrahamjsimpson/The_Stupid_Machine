@@ -479,6 +479,83 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
 
+		// 1 0000 0000 1001 : NAND constant reg w/ itself into out6 (Test 1.4.13)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+
+		// 1 0000 1000 0110 : NAND constant reg w/ out5 into out3 (Test 1.4.14)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+		// 1 1101 1101 0000 : Try "assigning" 1 to const reg
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 1 0000 0000 0110 : NAND constant reg w/ itself into out3, make sure still works (Test 1.4.15)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+		// 1 1101 0000 1110 : NAND internal3 (which should be 0) with const into internal4 (Test 1.4.16)
+		#10 input_signals1[0] = 1;	
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+
+
 		#10 enable1 = 0;
 		#10; // Need to wait a cycle for 1st instruction to execute
 		// 1st instruction: NAND internal Reg0 w/ itself into itself
@@ -565,8 +642,136 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 1.4.12 failed: regs_out[6] was %b", regs_out1[6]); 
 
+		#10;
+		if (regs_out1[6] == 0)
+			$display("Test 1.4.13 passed");
+		else
+			$display("WARNING: Test 1.4.13 failed: regs_out[6] was %b", regs_out1[6]); 
+
+		#10;
+		if (regs_out1[3] == 1)
+			$display("Test 1.4.14 passed");
+		else
+			$display("WARNING: Test 1.4.14 failed: regs_out[3] was %b", regs_out1[3]); 
+
+		#10;  // The "assignment" to const reg
+		#10;  // Trying to NAND const with itself
+		if (regs_out1[3] == 0)
+			$display("Test 1.4.15 passed");
+		else
+			$display("WARNING: Test 1.4.15 failed: regs_out[3] was %b", regs_out1[3]); 
+
+		#10;
+		if (dut1.internal_regs[4] == 1)
+			$display("Test 1.4.16 passed");
+		else
+			$display("WARNING: Test 1.4.16 failed: internal_regs[4] was %b", dut1.internal_regs[4]);
 
 
+		// Test 1.5: Branching statements
+		reset1 = 0;
+		enable1 = 0;
+		#10 reset1 = 1;
+		#10 reset1 = 0;
+
+		// Write instructions to iterate over:
+		enable1 = 1;
+		// 0 0011 0 1111111 : Branch on out0, jump forward 127 spaces (Test 1.5.1, just checking prog_counter val)
+		input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+
+		// 1101010101010: NAND internal Reg0 w/ itself into itself (so we have a 1 val to use to check 1.5.1)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+		// 0 1010 0 0000010 : Branch on internal0, jump forward 2 spaces (Test 1.5.2)
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+		// 1 0101 0101 0011 : NAND internal0 w/ itself into out0, resulting in out0=0 if previous instruction (Test 1.5.2) failed
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+
+		 // 1 0011 0011 0011 : NAND out0 w/ itself into itself: if Test 1.5.2 succeeds, out0=1 (Test 1.5.3)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+
+		#10 enable1 = 0;
+		#10; // Need to wait a cycle for 1st instruction to execute
+
+		if (dut1.prog_counter == 1)
+			$display("Test 1.5.1 passed.");
+		else
+			$display("WARNING: Test 1.5.1 failed: prog_counter was %d, not 1", dut1.prog_counter);
+
+		#10; // Put positive val on internal0
+		#10; // Branch on internal0, prog_counter should now be 4
+
+		if (dut1.prog_counter == 4)
+			$display("Test 1.5.2 passed.");
+		else
+			$display("WARNING: Test 1.5.2 failed: prog_counter was %d, not 4", dut1.prog_counter);
+
+		#10; // out0 should be 1 if Test 1.5.2 suceeded
+		if (regs_out1[0] == 1)
+			$display("Test 1.5.3 passed.");
+		else
+			$display("WARNING: Test 1.5.3 failed: regs_out[0] was %b", regs_out1[0]);
 
 		// Test 2: load a simple program
 		// First, load instructions from .1bin file
