@@ -751,6 +751,68 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 1;
 
+		// 1 1100 1100 1100 : invert internal2
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 0 0010 0 0000011 : branch on in1, advance 3
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+
+		// 0 1100 1 0000010 : branch on internal2 (which should now be true) and jump back 2 (which will set internal2 false again)
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+
+		// 1 0000 0000 1100 :Set internal2 to 0 (if branch fails)
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 0 0000 0 0000000 : Test that the "stay still" branch works as intended
+
 		#10 enable1 = 0;
 		#10; // Need to wait a cycle for 1st instruction to execute
 
@@ -772,6 +834,28 @@ module OneBitProcessor_tb;
 			$display("Test 1.5.3 passed.");
 		else
 			$display("WARNING: Test 1.5.3 failed: regs_out[0] was %b", regs_out1[0]);
+
+		#10 input_signals1[1] = 0;  // invert internal2, so it's 1
+		#10;   // in1 is 0, so this branch should not activate
+		#10; // branch: go back 2 instructions, to invert internal2
+		#10; // Should invert internal2 again back to 0
+		if (dut1.prog_counter == 6)
+			$display("Test 1.5.4 passed.");
+		else
+			$display("WARNING: Test 1.5.4 failed: prog_couner was %d", dut1.prog_counter);
+		if (dut1.internal_regs[2] == 0)
+			$display("Test 1.5.5 passed.");
+		else
+			$display("WARNING: Test 1.5.5 failed: internal_regs[2] was %b", dut1.internal_regs[2]);
+
+		input_signals1[1] = 1;
+		#10; // With in1 high, should now go forward 3
+		if (dut1.prog_counter == 9)
+			$display("Test 1.5.6 passed.");
+		else
+			$display("WARNING: Test 1.5.6 failed: prog_couner was %d", dut1.prog_counter);
+
+		
 
 		// Test 2: load a simple program
 		// First, load instructions from .1bin file
@@ -812,7 +896,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(Absolute file path here, "r");
+		fd_test2 = $fopen(Absolute path here, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
@@ -849,6 +933,7 @@ module OneBitProcessor_tb;
 */
 		// Reset dut
 		reset2 = 0;
+		enable2 = 0;
 		#10 reset2 = 1;
 		#10 reset2 = 0;
 
@@ -856,7 +941,8 @@ module OneBitProcessor_tb;
 		enable2 = 1;
 		for (i2 = 0; i2 < test2_prog_length; i2 = i2 + 1) begin
 			for (j2 = 0; j2 < INSTRUCTION_LENGTH; j2 = j2 + 1) begin
-				#10 input_signals2[0] = binrep[i2][j2];
+				input_signals2[0] = binrep[i2][j2];
+				#10;
 			end
 		end
 		enable2 = 0;
