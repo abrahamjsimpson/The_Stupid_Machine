@@ -811,7 +811,65 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
 
-		// 0 0000 0 0000000 : Test that the "stay still" branch works as intended
+		// 0 0010 0 0000000 : Test that the "stay still" branch works as intended (branch on in1, Test 1.5.7-1.5.9)
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 1 0100 0100 0100 : Set out1 to 1 after execution resumes
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 0 0001 1 0000000 : Test that the "stay still" branch works as intended (branch on in0, Test 1.5.10)
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+
+		// 1 0100 0100 0100 : Set out1 to 0 after execution resumes
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 1;
+		#10 input_signals1[0] = 0;
+		#10 input_signals1[0] = 0;
 
 		#10 enable1 = 0;
 		#10; // Need to wait a cycle for 1st instruction to execute
@@ -848,12 +906,96 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 1.5.5 failed: internal_regs[2] was %b", dut1.internal_regs[2]);
 
+
 		input_signals1[1] = 1;
 		#10; // With in1 high, should now go forward 3
 		if (dut1.prog_counter == 9)
 			$display("Test 1.5.6 passed.");
 		else
 			$display("WARNING: Test 1.5.6 failed: prog_couner was %d", dut1.prog_counter);
+
+		// input_signals1[1] is already 1, so should stay still
+		#10;
+		if (dut1.prog_counter == 9)
+			$display("Test 1.5.7 passed.");
+		else
+			$display("WARNING: Test 1.5.7 failed: prog_couner was %d", dut1.prog_counter);	
+		if (regs_out1[1] == 0)
+			$display("Test 1.5.8 passed.");
+		else
+			$display("WARNING: Test 1.5.8 failed: regs_out1[1] was %b", regs_out1[1]);		
+
+		#10;  // prog_counter should stay at 9 no matter how much time passes as long as in1 is 1
+		if (dut1.prog_counter == 9)
+			$display("Test 1.5.9 passed.");
+		else
+			$display("WARNING: Test 1.5.9 failed: prog_couner was %d", dut1.prog_counter);	
+		if (regs_out1[1] == 0)
+			$display("Test 1.5.10 passed.");
+		else
+			$display("WARNING: Test 1.5.10 failed: regs_out1[1] was %b", regs_out1[1]);	
+		#100;	
+		if (dut1.prog_counter == 9)
+			$display("Test 1.5.11 passed.");
+		else
+			$display("WARNING: Test 1.5.11 failed: prog_couner was %d", dut1.prog_counter);
+		if (regs_out1[1] == 0)
+			$display("Test 1.5.12 passed.");
+		else
+			$display("WARNING: Test 1.5.12 failed: regs_out1[1] was %b", regs_out1[1]);		
+
+
+		input_signals1[1] = 0;
+		#10; // Now the counter should advance; 
+		if (dut1.prog_counter == 10)
+			$display("Test 1.5.11 passed.");
+		else
+			$display("WARNING: Test 1.5.11 failed: prog_couner was %d", dut1.prog_counter);
+		#10;
+		if (regs_out1[1] == 1)
+			$display("Test 1.5.12 passed.");
+		else
+			$display("WARNING: Test 1.5.12 failed: regs_out1[1] was %b", regs_out1[1]);	
+
+		input_signals1[0] = 1;
+		//next instruction is same as last branch but on in0 (and "advances" 0 instead of regressing)
+		#10;
+		if (dut1.prog_counter == 11)
+			$display("Test 1.5.13 passed.");
+		else
+			$display("WARNING: Test 1.5.13 failed: prog_couner was %d", dut1.prog_counter);	
+		#10; // prog_counter should stay same as long as in0 is 1)
+		if (dut1.prog_counter == 11)
+			$display("Test 1.5.14 passed.");
+		else
+			$display("WARNING: Test 1.5.14 failed: prog_couner was %d", dut1.prog_counter);	
+		if (regs_out1[1] == 1)
+			$display("Test 1.5.15 passed");
+		else
+			$display("ERROR: Test 1.5.15 failed: regs_out[1] was %b", regs_out1[1]);
+
+		#50;
+		if (dut1.prog_counter == 11)
+			$display("Test 1.5.16 passed.");
+		else
+			$display("WARNING: Test 1.5.16 failed: prog_couner was %d", dut1.prog_counter);
+		if (regs_out1[1] == 1)
+			$display("Test 1.5.17 passed");
+		else
+			$display("ERROR: Test 1.5.17 failed: regs_out[1] was %b", regs_out1[1]);	
+
+		input_signals1[0] = 0; // Now the prog_counter should advance
+		#10;
+		if (dut1.prog_counter == 12)
+			$display("Test 1.5.18 passed.");
+		else
+			$display("WARNING: Test 1.5.18 failed: prog_couner was %d", dut1.prog_counter);	
+		#10;  // Last instruction: flip out1 back to 0
+		if (regs_out1[1] == 0)
+			$display("Test 1.5.19 passed");
+		else
+			$display("ERROR: Test 1.5.19 failed: regs_out[1] was %b", regs_out1[1]);	
+
 
 		
 
@@ -896,7 +1038,7 @@ module OneBitProcessor_tb;
 		// load instructions from file
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen(Absolute path here, "r");
+		fd_test2 = $fopen(Absolute path to shift_reg.1bin, "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
