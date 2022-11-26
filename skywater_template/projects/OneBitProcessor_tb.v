@@ -1026,7 +1026,8 @@ module OneBitProcessor_tb;
 	//reg[640*8:0] errorMessage;
 	integer lineNo; 
 	reg[8*13:1] instructions2;
-	reg[12:0] binrep[5:0];
+	parameter NO_INSTRUCTIONS_IN_SHIFT_REG = 16;
+	reg[12:0] binrep[(NO_INSTRUCTIONS_IN_SHIFT_REG - 1):0];
 
 	// genaral test vars
 	integer i2, j2;  // for loop vars
@@ -1082,7 +1083,7 @@ module OneBitProcessor_tb;
 		// Loading instructions into dut
 		enable2 = 1;
 		for (i2 = 0; i2 < test2_prog_length; i2 = i2 + 1) begin
-			for (j2 = 0; j2 < INSTRUCTION_LENGTH; j2 = j2 + 1) begin
+			for (j2 = INSTRUCTION_LENGTH - 1; j2 >= 0; j2 = j2 - 1) begin //(j2 = 0; j2 < INSTRUCTION_LENGTH; j2 = j2 + 1) begin
 				input_signals2[0] = binrep[i2][j2];
 				#10;
 			end
@@ -1093,7 +1094,7 @@ module OneBitProcessor_tb;
 		// execution of program begins
 		// Should begin on instruction 0 waiting for IN1 to be low. Kep high for a few cycles to make sure it works
 		input_signals2[1] = 1;
-
+		#10;
 		boolVal = '0;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // all out regs should be set to 0 following reset
@@ -1109,8 +1110,6 @@ module OneBitProcessor_tb;
 
 		boolVal = '0;
 		#20;
-		$display("%b", dut2.prog_counter);  // after any amount of time passes after reset, prog_couter is unknown (xs)
-		#10 input_signals2[0] = 1;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // should still be zero since exec is paused w/ IN0 high
 				;  // Do nothing. Having an else is tripped even if the condition evals to x
@@ -1195,7 +1194,7 @@ module OneBitProcessor_tb;
 
 		// leave at 1
 		#(10 * test2_prog_length);
-		if (regs_out2 == 'b0010111)
+		if (regs_out2 == 'b0010111)  // FIXME fails here ===========================================================================
 			$display("Test passed");
 		else
 			$display("WARNING: Test 2 Failed");

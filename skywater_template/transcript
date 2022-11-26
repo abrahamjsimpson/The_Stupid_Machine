@@ -18,805 +18,16 @@
 # 2 compiles, 0 failed with no errors.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:10:28 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 907
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:28:03 on Nov 25,2022, Elapsed time: 0:17:35
-# Errors: 5670, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:28:03 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 993
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# WARNING: Test 1.5.7 failed: prog_couner was    9
-# WARNING: Test 1.5.8 failed: prog_couner was    9
-# WARNING: Test 1.5.9 failed: prog_couner was    9
-# WARNING: Test 1.5.10 failed: prog_couner was   10
-# WARNING: Test 1.5.11 failed: prog_couner was   10
-# WARNING: Test 1.5.12 failed: prog_couner was   10
-# WARNING: Test 1.5.13 failed: prog_couner was   10
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:36:41 on Nov 25,2022, Elapsed time: 0:08:38
-# Errors: 2917, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:36:41 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 994
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# WARNING: Test 1.5.13 failed: prog_couner was    9
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:40:32 on Nov 25,2022, Elapsed time: 0:03:51
-# Errors: 2894, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:40:32 on Nov 25,2022
+# Start time: 22:26:47 on Nov 25,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
 # Loading work.OneBitProcessor(fast__1)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 994
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# WARNING: Test 1.5.13 failed: prog_couner was    9
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 20:56:28 on Nov 25,2022, Elapsed time: 0:15:56
-# Errors: 2943, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 20:56:28 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 994
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# WARNING: Test 1.5.4 failed: prog_couner was   10
-# WARNING: Test 1.5.5 failed: internal_regs[2] was 1
-# WARNING: Test 1.5.6 failed: prog_couner was   10
-# WARNING: Test 1.5.7 failed: prog_couner was   10
-# WARNING: Test 1.5.8 failed: prog_couner was   10
-# WARNING: Test 1.5.9 failed: prog_couner was   10
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# WARNING: Test 1.5.13 failed: prog_couner was    9
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 21:12:10 on Nov 25,2022, Elapsed time: 0:15:42
-# Errors: 2964, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:12:10 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 994
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# WARNING: Test 1.5.13 failed: prog_couner was    9
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 21:23:48 on Nov 25,2022, Elapsed time: 0:11:38
-# Errors: 2935, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:23:48 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 994
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# Test 1.5.13 passed.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v failed with 1 errors.
-# 2 compiles, 1 failed with 1 error.
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 21:47:37 on Nov 25,2022, Elapsed time: 0:23:49
-# Errors: 6608, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:47:37 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Error (suppressible): /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v(974): (vopt-7063) Failed to find 'regs_out' in hierarchical name 'regs_out'.
-#         Region: OneBitProcessor_tb
-# Optimization failed
-# Error loading design
-# End time: 21:47:37 on Nov 25,2022, Elapsed time: 0:00:00
-# Errors: 4797, Warnings: 0
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:48:03 on Nov 25,2022
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1048
-add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
-add wave -position insertpoint  \
-sim:/OneBitProcessor_tb/dut1/instructions
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# xxxxxxxxxx
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
-# Test 2.5 passed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# WARNING: Test 2 Failed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# Test 1.5.11 passed.
-# WARNING: Test 1.5.12 failed: regs_out1[1] was 0
-# Test 1.5.13 passed.
-# Test 1.5.14 passed.
-# Test 1.5.15 passed
-# Test 1.5.16 passed.
-# Test 1.5.17 passed
-# WARNING: Test 1.5.18 failed: prog_couner was   12
-# Test 1.5.19 passed
-# Compile of OneBitProcessor.v was successful.
-# Compile of OneBitProcessor_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 21:52:04 on Nov 25,2022, Elapsed time: 0:04:01
-# Errors: 4849, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:52:04 on Nov 25,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
 #    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1049
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
 run
 #                    0 << Starting the Simulation
 # Test 1.1.1 passed
@@ -906,5 +117,837 @@ run
 # Test 1.5.17 passed
 # Test 1.5.18 passed.
 # Test 1.5.19 passed
-# End time: 21:53:05 on Nov 25,2022, Elapsed time: 0:01:01
-# Errors: 5237, Warnings: 1
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:30:50 on Nov 25,2022, Elapsed time: 0:04:03
+# Errors: 15, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:30:50 on Nov 25,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1049
+add wave -position insertpoint sim:/OneBitProcessor_tb/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/binrep
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# xxxxxxxxxx
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:33:42 on Nov 25,2022, Elapsed time: 0:02:52
+# Errors: 58, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:33:42 on Nov 25,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# 0000001001
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:33:59 on Nov 25,2022, Elapsed time: 0:00:17
+# Errors: 47, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:33:59 on Nov 25,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# 0000001001
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:37:45 on Nov 25,2022, Elapsed time: 0:03:46
+# Errors: 63, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:37:45 on Nov 25,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# 0000001010
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:42:17 on Nov 25,2022, Elapsed time: 0:04:32
+# Errors: 76, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:42:17 on Nov 25,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:47:11 on Nov 25,2022, Elapsed time: 0:04:54
+# Errors: 72, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:47:11 on Nov 25,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut1/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut1/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:49:42 on Nov 25,2022, Elapsed time: 0:02:31
+# Errors: 293, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:49:42 on Nov 25,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# WARNING: Test 2.5 Failed: Out0 should be 1, was 0.
+# Test 2.5 passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 22:52:59 on Nov 25,2022, Elapsed time: 0:03:17
+# Errors: 189, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 22:52:59 on Nov 25,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1050
+add wave -position insertpoint sim:/OneBitProcessor_tb/dut2/*
+add wave -position insertpoint  \
+sim:/OneBitProcessor_tb/dut2/instructions
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# Test 2.5 passed
+# Test 2.5 passed
+# Test passed
+# Test passed
+# Test passed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# WARNING: Test 2 Failed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# End time: 22:58:58 on Nov 25,2022, Elapsed time: 0:05:59
+# Errors: 743, Warnings: 1
