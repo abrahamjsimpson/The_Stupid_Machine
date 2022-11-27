@@ -21,7 +21,7 @@ Branch on True:
 The Verilog code will be rigorously tested using Vsim. For unit testing, the different blocks in the diagram will be tested individually, as will the functionality for reset and for loading new instructions. For integration testing, a few small programs will be written in assembly, possibly using a custom assembler, to use in the test bed to test the processor’s functionality. Verilog includes functions to read data from a file, so lengthy programs can be written using an external program and then imported into the testbed.  
 The module will use the following pins:  
 In: 	reg0/read instruction bit  
-In:	reg1  
+In:		reg1  
 Out:	reg2  
 Out:	reg3   
 Out:	reg4   
@@ -34,4 +34,11 @@ In:	synchronous reset
 In:	Enable write to Instruction Memory  
 (12 signal pins, plus two for voltage supply and ground, for a total of 14 pins)  
 On the rising edge of the clock when reset is asserted, all registers and all instruction memory positions are reset to 0, and the instruction counter is set to zero. When enable write is asserted, on each clock edge the value of reg0 is read into instruction memory, beginning at instruction 0, position 0 and proceeding across each bit of each instruction in order until enable write is deasserted, at which point execution of the program begins at instruction 0.
+
+# Test Benches:
+OneBitProcessor_tb.v contains the test bench for the processor (which is contained entirely in OneBitProcessor.v). Not that, to run the test bench, 
+the absolute file path on your system for shift_reg.1bin (located in the repo's Assebmler directory) must be supplied on line 1004 in OneBitProcessor_tb.v. The test bench
+contains two "tests": Test 1 comprises unit tests that depend on hard-coded intructions that are loaded into the processor. Test 2 loads instructions from shift_reg.1bin
+(which itself contains the instructions resulting from running shift_reg.asm through Assembler.py), which causes the processor to emulate a shift register, and then tests 
+that the code is running correctly and giving correct outputs.
 
