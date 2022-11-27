@@ -2,8 +2,7 @@
 Matthew Crump
 ECE5710, Fall 2022
 The Stupid Machine, a 1-Bit Processor
-Test Bench
-Tests for the OneBitProcessor and associated sub-modules
+Tests for the OneBitProcessor
 */
 `timescale 1 ns / 100 ps
 
@@ -15,14 +14,7 @@ module OneBitProcessor_tb;
 	reg clk;
 	initial begin
 		$display($time, " << Starting the Simulation");
-/*
-		$display("1 as bin:");
-		$display("%b", "1");  // 00110001
-		$display("0 as bin:");
-		$display("%b", "0");  //00110000
-		$display("newline as bin:");
-		$display("%b", "\n");  //00001010
-*/
+
 		clk = 0;
 		forever #5 clk = ~clk;
 	end
@@ -40,8 +32,6 @@ module OneBitProcessor_tb;
 	// outputs from the DUT
 	wire [6:0] regs_out1;
 
-	// Instructions read in from the file
-	//reg[12:0] read_in_data [ MAX_INSTRUCTION_LENGTH:0];  
 	OneBitProcessor dut1 (
 		.clk(clk),
 		.reset(reset1),
@@ -82,9 +72,8 @@ module OneBitProcessor_tb;
 		// Instruction Mem:
 		testFailed = '0;
 		for (i = 0; i < dut1.INSTRUCTION_MEM; i = i + 1) begin
-			//$display("iteration %d, testBool %b", i, testBool);
 			if (dut1.instructions[i] == '0)
-				;//$display("%b", dut1.instructions[i]); // Need this form: if instructions is z or x then enters else
+				; // Need this form: if instructions is z or x then enters else
 			else begin
 				testFailed = '1;
 				$display("WARNING: Test 1.1.4 failed. instructions[%d] was %b", i, dut1.instructions[i]);
@@ -98,12 +87,7 @@ module OneBitProcessor_tb;
 		// Test 1.2: load an instruction:
 		input_signals1[0] = 1;
 		enable1 = 1;
-/*
-		#10 $display("%b", dut1.instructions[0]);
-		#10 $display("%b", dut1.instructions[0]);
-		#10 $display("%b", dut1.instructions[0]);
-		#1000 $display("%b", dut1.instructions[0]);
-*/
+
 		// Wait 13 periods so a full instruction is just 1s
 		#130
 
@@ -181,7 +165,6 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.2.7 failed: slot254 contained %b", dut1.instructions[254]);
 
 		// Just in case, test that it can write to the last instruction location
-		//#(((dut1.INSTRUCTION_MEM - (255 - 4))*13 - 1)*10) input_signals1[0] = 0; // wait until the start of the last instruction slot
 		#(129890 - $time) input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
@@ -289,16 +272,7 @@ module OneBitProcessor_tb;
 			$display("ERROR: Test 1.3.4 failed: prog_counter was %d", dut1.prog_counter);
 
 		// Test 1.4: Test that NAND operations function correctly
-/*
-		$display($time);
-		force dut1.prog_counter = 0;
-		force dut1.outReg = 0;
-		force dut1.internal_regs = 0;
 
-		// instruction 1 inverts internal_regs[0], resulting in it being 1
-		#10 $display($time);
-		$display("reg_3_addr: %d %b", dut1.reg_3_addr, dut1.reg_3_addr);
-*/
 		reset1 = 0;
 		enable1 = 0;
 		#10 reset1 = 1;
@@ -348,7 +322,7 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 1;
-		//  (Test 1.4.4)
+		// Same as last (Test 1.4.4)
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
@@ -376,7 +350,7 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
-		// (Test 1.4.6)
+		// Same (Test 1.4.6)
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
@@ -404,7 +378,7 @@ module OneBitProcessor_tb;
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 0;
-		// (Test 1.4.8)
+		// Same (Test 1.4.8)
 		#10 input_signals1[0] = 1;
 		#10 input_signals1[0] = 0;
 		#10 input_signals1[0] = 1;
@@ -565,7 +539,6 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.4.1 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
 		// invert again to make sure it goes both ways
-		//force dut1.prog_counter = 0;
 		#10;
 		if (dut1.internal_regs[0] == 0) 
 			$display("Test 1.4.2 passed");
@@ -580,7 +553,6 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.4.3 failed: internal_regs[0] was %b", dut1.internal_regs[0]);
 
 		// invert again to make sure it goes both ways
-		//force dut1.prog_counter = 1;
 		#10;
 		if (regs_out1[0] == 0) 
 			$display("Test 1.4.4 passed");
@@ -597,7 +569,6 @@ module OneBitProcessor_tb;
 
 		// repeat above for 0
 		input_signals1[0] = 1;
-		//force dut1.prog_counter = 2;
 		#10;
 		if (regs_out1[1] == 0)
 			$display("Test 1.4.6 passed");
@@ -996,14 +967,8 @@ module OneBitProcessor_tb;
 		else
 			$display("ERROR: Test 1.5.19 failed: regs_out[1] was %b", regs_out1[1]);	
 
-
-		
-
-		// Test 2: load a simple program
-		// First, load instructions from .1bin file
-		//$readmemb("test.1bin", read_in_data);
-
-		
+		$display("Test 1 finished");
+		// End of Test 1
 	end
 
 	// TEST 2: Run a simple program: shift register  ==============================================================
@@ -1023,7 +988,7 @@ module OneBitProcessor_tb;
 
 	// FileIO vars
 	integer fd_test2;
-	//reg[640*8:0] errorMessage;
+	//reg[640*8:0] errorMessage;  // For debugging File I/O; see below
 	integer lineNo; 
 	reg[8*13:1] instructions2;
 	parameter NO_INSTRUCTIONS_IN_SHIFT_REG = 16;
@@ -1035,25 +1000,26 @@ module OneBitProcessor_tb;
 	reg boolVal;
 
 	initial begin
-		lineNo = 0;
 		// load instructions from file
+		fd_test2 = $fopen("/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/Assembler/shift_reg.1bin", "r");
+
+		// In future, using a reative file path and/or a macro would be better, but I couldn't get Vsim to cooperate
 		//fd_test2 = $fopen(`ABS_FILEPATH);
 		//fd_test2 = $fopen("./../Assembler/test.1bin");
-		fd_test2 = $fopen("/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/Assembler/shift_reg.1bin", "r");
 		
 		// For debugging:
 		//$display("file handler: %d", fd_test2);
 		//$ferror(fd_test2, errorMessage);
 		//$display("%s", errorMessage);
 
+		lineNo = 0;
 		while (! $feof(fd_test2)) begin
 			$fgets(instructions2, fd_test2);
-			if ((instructions2[8:1] != "\n") && (instructions2[8:1] != 'b00000000)) begin  // Every other line is a newline and zeros, and the last line is entirely zeros. Ignore these lines
-				//$display("%s", instructions2);
-				//$display("%d", lineNo);
+ 			// Every other line is a newline and zeros, and the last line is entirely zeros. Ignore these lines.
+			if ((instructions2[8:1] != "\n") && (instructions2[8:1] != 'b00000000)) begin
 				for (i2 = 0; i2 < 13; i2 = i2 + 1) begin
-					//$display("%b %d", instructions2[((i2*8)+1)+:8], i2); // print current char in binary
-					if (instructions2[((i2*8)+1)+:8] == 8'b00110001) begin  // "1" string in binary
+					//$display("%b %d", instructions2[((i2*8)+1)+:8], i2); // For debug: print current char in binary
+					if (instructions2[((i2*8)+1)+:8] == 8'b00110001) begin  // "1" string/char in binary
 						binrep[lineNo][i2] = 1;
 					end else begin
 						binrep[lineNo][i2] = 0;
@@ -1098,9 +1064,9 @@ module OneBitProcessor_tb;
 		boolVal = '0;
 		for (i2 = 0; i < OUT_REGS; i = i + 1) begin
 			if (regs_out2[i] == 0)  // all out regs should be set to 0 following reset
-				;//$display("Test passed: regs_out2[%d] is 0", i);
+				;// Do nothing; if if evals to x or z, will enter else block
 			else
-				boolVal = '1; //$display("WARNING: Test 2 Failed some out regs were not initially 0");
+				boolVal = '1;
 		end
 		// Report if some of the out regs are not 0
 		if (boolVal)
@@ -1167,92 +1133,92 @@ module OneBitProcessor_tb;
 				boolVal = '1;
 		end
 		if (boolVal)
-			$display("WARNING: Test 2.5 failed: 12nd shift should have last 6 regs 0 (software problem?)");
+			$display("WARNING: Test 2.6 failed: 12nd shift should have last 6 regs 0 (software problem?)");
 		else 
-			$display("Test 2.5 passed");
+			$display("Test 2.6 passed");
 
 		input_signals2[0] = 0;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0000010)
-			$display("Test passed");
+			$display("Test 2.7 passed");
 		else
-			$display("WARNING: Test 2.6 Failed");
+			$display("WARNING: Test 2.7 Failed");
 
 		input_signals2[0] = 1;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0000101)
-			$display("Test passed");
-		else
-			$display("WARNING: Test 2.7 Failed");
-
-		// leave at 1
-		#(10 * test2_prog_length);
-		if (regs_out2 == 'b0001011)
-			$display("Test passed");
+			$display("Test 2.8 passed");
 		else
 			$display("WARNING: Test 2.8 Failed");
 
 		// leave at 1
 		#(10 * test2_prog_length);
-		if (regs_out2 == 'b0010111)  
-			$display("Test passed");
+		if (regs_out2 == 'b0001011)
+			$display("Test 2.9 passed");
 		else
 			$display("WARNING: Test 2.9 Failed");
+
+		// leave at 1
+		#(10 * test2_prog_length);
+		if (regs_out2 == 'b0010111)  
+			$display("Test 2.10 passed");
+		else
+			$display("WARNING: Test 2.10 Failed");
 
 		// PAUSE: make sure it branches
 		input_signals2[1] = 1;
 		#10;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.11 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.11 Failed");
 		#10;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.12 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.12 Failed");
 		#20;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.13 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.13 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.14 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.14 Failed");
 		#400;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.15 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.15 Failed");
 
 		input_signals2[0] = 0;  // still paused
 		#10;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.16 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.16 Failed");
 		#10;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.17 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.17 Failed");
 		#20;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.18 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.18 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.19 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.19 Failed");
 		#400;
 		if (regs_out2 == 'b0010111)
-			$display("Test passed");
+			$display("Test 2.20 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.20 Failed");
 
 		// resume shifting
 		input_signals2[1] = 0;
@@ -1261,81 +1227,79 @@ module OneBitProcessor_tb;
 		input_signals2[0] = 0;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0101110)
-			$display("Test passed");
+			$display("Test 2.21 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.21 Failed");
 
 		// back to 1
 		input_signals2[0] = 1;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1011101)
-			$display("Test passed");
+			$display("Test 2.22 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.22 Failed");
 
 		// hold at 1
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0111011)
-			$display("Test passed");
+			$display("Test 2.23 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.23 Failed");
 
 		// back to 0
 		input_signals2[0] = 0;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1110110)
-			$display("Test passed");
+			$display("Test 2.24 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.24 Failed");
 
 		// back to 1
 		input_signals2[0] = 1;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1101101)
-			$display("Test passed");
+			$display("Test 2.25 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.25 Failed");
 
 		// hold 1 for remaining test
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1011011)
-			$display("Test passed");
+			$display("Test 2.26 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.26 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0110111)
-			$display("Test passed");
+			$display("Test 2.27 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.27 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1101111)
-			$display("Test passed");
+			$display("Test 2.28 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.28 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1011111)
-			$display("Test passed");
+			$display("Test 2.29 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.29 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0111111)
-			$display("Test passed");
+			$display("Test 2.30 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.30 Failed");
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1111111)
-			$display("Test passed");
+			$display("Test 2.31 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.31 Failed");
 		if (regs_out2 == 'b1111111)
-			$display("Test passed");
+			$display("Test 2.32 passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.32 Failed");
 
 		$display("Test 2 finished");
-
+		// End of Test 2 (shift_reg.1bin)
 	end
-
-
 endmodule
 	
