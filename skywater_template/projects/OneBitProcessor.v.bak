@@ -55,7 +55,7 @@ module OneBitProcessor
 	assign operand [6] = (!ctrl_bit && data_1) ? jump[0] : 0;
 
 	// determining add/subtract for program counter:
-	assign adder_ctrl = (!ctrl_bit && bit_6); //&& !data_1);  // If data_1 is 0 then we are not branching
+	assign adder_ctrl = (!ctrl_bit && bit_6 && data_1);  // If data_1 is 0 then we are not branching
 
 	// NAND for registers:
 	nand (nand_out, data_1, data_2);

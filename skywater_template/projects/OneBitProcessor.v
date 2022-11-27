@@ -156,10 +156,10 @@ module OneBitProcessor
 			'b1100 : data_2 = outReg[0];
 			'b0010 : data_2 = outReg[1];
 			'b1010 : data_2 = outReg[2];
-			'b1001 : data_2 = outReg[3];
+			'b0110 : data_2 = outReg[3];
 			'b1110 : data_2 = outReg[4];
 			'b0001 : data_2 = outReg[5];
-			'b0110 : data_2 = outReg[6];
+			'b1001 : data_2 = outReg[6];
 			'b0101 : data_2 = internal_regs[0];
 			'b1101 : data_2 = internal_regs[1];
 			'b0011 : data_2 = internal_regs[2];

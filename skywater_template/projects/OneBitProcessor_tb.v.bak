@@ -1176,28 +1176,28 @@ module OneBitProcessor_tb;
 		if (regs_out2 == 'b0000010)
 			$display("Test passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.6 Failed");
 
 		input_signals2[0] = 1;
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0000101)
 			$display("Test passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.7 Failed");
 
 		// leave at 1
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b0001011)
 			$display("Test passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.8 Failed");
 
 		// leave at 1
 		#(10 * test2_prog_length);
-		if (regs_out2 == 'b0010111)  // FIXME fails here ===========================================================================
+		if (regs_out2 == 'b0010111)  
 			$display("Test passed");
 		else
-			$display("WARNING: Test 2 Failed");
+			$display("WARNING: Test 2.9 Failed");
 
 		// PAUSE: make sure it branches
 		input_signals2[1] = 1;
@@ -1296,7 +1296,7 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 2 Failed");
 
-		// hold 1 for ramaining test
+		// hold 1 for remaining test
 		#(10 * test2_prog_length);
 		if (regs_out2 == 'b1011011)
 			$display("Test passed");
