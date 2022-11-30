@@ -193,7 +193,7 @@ module OneBitProcessor
 					'b1110 : internal_regs[4] = nand_out;
 					'b1111 : internal_regs[5] = nand_out;
 */
-					// Correct order? (i.e. 'b[3][2][1][0])
+					// Correct order? (i.e. 'b[3][2][1][0]) FIXME get -endian right in var declaration
 					'b1100 : outReg[0] = nand_out;
 					'b0010 : outReg[1] = nand_out;
 					'b1010 : outReg[2] = nand_out;

@@ -18,7 +18,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 18:25:46 on Nov 26,2022
+# Start time: 20:48:34 on Nov 29,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
@@ -119,10 +119,10 @@ run
 # Compile of OneBitProcessor_tb.v was successful.
 # 2 compiles, 0 failed with no errors.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 18:33:26 on Nov 26,2022, Elapsed time: 0:07:40
-# Errors: 756, Warnings: 1
+# End time: 20:49:43 on Nov 29,2022, Elapsed time: 0:01:09
+# Errors: 10, Warnings: 1
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 18:33:26 on Nov 26,2022
+# Start time: 20:49:43 on Nov 29,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
@@ -218,5 +218,5 @@ run
 # Test 1.5.18 passed.
 # Test 1.5.19 passed
 # Test 1 finished
-# End time: 18:34:19 on Nov 26,2022, Elapsed time: 0:00:53
-# Errors: 976, Warnings: 1
+# End time: 20:51:16 on Nov 29,2022, Elapsed time: 0:01:33
+# Errors: 319, Warnings: 1
