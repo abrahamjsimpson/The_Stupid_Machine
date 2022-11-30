@@ -213,16 +213,20 @@ module OneBitProcessor
 	end  // end always
 
 	// reset loading counters when en is set high
+/*
 	always @ (posedge en) begin
 		load_instruction_counter = 0;
 		load_bit_counter = 0;
 	end 
+*/
 	// write to instruction memory:
 	always @ (posedge clk) begin
 		if (reset) begin
 			for (i = 0; i < INSTRUCTION_MEM; i = i + 1) begin
 				instructions[i] = 'b0000000000000;
 			end
+			load_instruction_counter = 0;
+			load_bit_counter = 0;
 		end else begin
 			if (en) begin
 				instructions[load_instruction_counter][load_bit_counter] = inReg[0];
