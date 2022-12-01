@@ -26,7 +26,6 @@ vivado.jou
 *_mapped.v
 *.ddc
 
-tsmc_template/HDL/GATE/
 tsmc_template/HDL/PLACED/
 tsmc_template/HDL/RTL/pads.cr.mti
 tsmc_template/HDL/RTL/pads.mpf
@@ -34,7 +33,6 @@ tsmc_template/HDL/RTL/transcript
 tsmc_template/HDL/RTL/work/
 tsmc_template/design_compiler/DDC/
 tsmc_template/design_compiler/DESIGN_LIBS/
-tsmc_template/design_compiler/HDL/GATE/
 tsmc_template/design_compiler/RPT/
 tsmc_template/design_compiler/SDC/
 tsmc_template/design_compiler/SDF/
