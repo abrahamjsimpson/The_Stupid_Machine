@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version P-2019.03-SP5 for linux64 -- Oct 17, 2019
-#@ # Date:   Tue Nov 29 20:55:17 2022
+#@ # Date:   Tue Nov 29 21:33:07 2022
 #@ # Run by: u0894108@lab2-6.eng.utah.edu
 #@ 
 
@@ -43100,5 +43100,5 @@ gui_start
 #@ # -- End source /uusoc/facility/cad_tools/Synopsys/syn_P-2019.03-SP5/auxx/tcllib/lib/iwidgets4.1/watch.itk
 
 analyze -library WORK -format verilog {/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v}
-analyze -library WORK -format verilog {/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor.v}
 elaborate OneBitProcessor -architecture verilog -library DEFAULT
+write -hierarchy -format ddc -output /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/design_compiler/DDC/OneBitProcessor_elab.ddc
