@@ -35,17 +35,27 @@ module OneBitProcessor
 	// wires
 	wire [(PROG_COUNTER_LENGTH - 1):0] prog_count_return, prog_count_out;
 	wire [(REG_ADDR_LENGTH - 1):0] reg_1_addr, reg_2_addr, reg_3_addr, inst_mid, inst_bottom;
-	wire [(JUMP_BITS - 1):0] jump, operand;
-	wire ctrl_bit, nand_out, bit_6, adder_ctrl;
+	//tri [(REG_ADDR_LENGTH - 1):0] reg_2_addr, reg_3_addr;  // Tri must be explicit or Design Comiler will infer tri-state buffers (TSGEN)
+	wire [(JUMP_BITS - 1):0] operand, jump;
+	//tri [(JUMP_BITS - 1):0] jump;  // Must be explicit; see above
+	wire ctrl_bit, nand_out, adder_ctrl, bit_6;
+	//tri bit_6; // Must be explicit; see above
 	reg data_1, data_2;
 
 	// muxes:
 	// two muxes that have ctrl_bit as sel line:
+/*	Removed to remove tri-state buffers (increases fanout, but Design Compiler won't synthesize otherwise)
 	assign reg_2_addr = ctrl_bit ? inst_mid : {(REG_ADDR_LENGTH){1'bz}};
 	assign reg_3_addr = ctrl_bit ? inst_bottom : {(REG_ADDR_LENGTH){1'bz}};
 	assign jump [2:0] = ctrl_bit ? {(3){1'bz}} : inst_mid[3:1];
 	assign jump [6:3] = ctrl_bit ? {(4){1'bz}} : inst_bottom;
 	assign bit_6 = ctrl_bit ? 'bz : inst_mid[0];
+*/
+	assign reg_2_addr = inst_mid;
+	assign reg_3_addr = inst_bottom;
+	assign jump [2:0] = inst_mid[3:1];
+	assign jump [6:3] = inst_bottom;
+	assign bit_6 = inst_mid[0];
 	// two muxes that feed into the program counter adder:
 	//assign operand = (!ctrl_bit && data_1) ? jump : 'b0000001;
 	// w/ above, jump comes in backwards: below fixes it FIXME get -endian right instead

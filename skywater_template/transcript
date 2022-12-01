@@ -18,108 +18,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
 # vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:18:57 on Nov 29,2022
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.OneBitProcessor_tb(fast)
-# Loading work.OneBitProcessor(fast)
-# Loading work.OneBitProcessor(fast__1)
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
-#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1017
-run
-#                    0 << Starting the Simulation
-# Test 1.1.1 passed
-# Test 1.1.2 passed
-# Test 1.1.3 passed
-# Test 1.1.4 passed
-# Test 1.2.1 passed
-# Test 1.2.2 passed
-# Test 1.2.3 passed
-# Test 1.2.4 passed
-# Test 1.2.5 passed
-# Test 2.1 passed
-# Test 2.2 passed
-# Test 2.3 passed
-# Test 2.4 passed
-# Test 2.5 passed
-# Test 2.6 passed
-# Test 2.7 passed
-# Test 2.8 passed
-# Test 2.9 passed
-# Test 2.10 passed
-# Test 2.11 passed
-# Test 2.12 passed
-# Test 2.13 passed
-# Test 2.14 passed
-# Test 2.15 passed
-# Test 2.16 passed
-# Test 2.17 passed
-# Test 2.18 passed
-# Test 2.19 passed
-# Test 2.20 passed
-# Test 2.21 passed
-# Test 2.22 passed
-# Test 2.23 passed
-# Test 2.24 passed
-# Test 2.25 passed
-# Test 2.26 passed
-# Test 2.27 passed
-# Test 2.28 passed
-# Test 2.29 passed
-# Test 2.30 passed
-# Test 2.31 passed
-# Test 2.32 passed
-# Test 2 finished
-# Test 1.2.6 passed
-# Test 1.2.7 passed
-# Test 1.2.8 passed
-# Test 1.3.1 passed
-# Test 1.3.2 passed
-# Test 1.3.3 passed
-# Test 1.3.4 passed
-# Test 1.4.1 passed
-# Test 1.4.2 passed
-# Test 1.4.3 passed
-# Test 1.4.4 passed
-# Test 1.4.5 passed
-# Test 1.4.6 passed
-# Test 1.4.7 passed
-# Test 1.4.8 passed
-# Test 1.4.9 passed
-# Test 1.4.10 passed
-# Test 1.4.11 passed
-# Test 1.4.12 passed
-# Test 1.4.13 passed
-# Test 1.4.14 passed
-# Test 1.4.15 passed
-# Test 1.4.16 passed
-# Test 1.5.1 passed.
-# Test 1.5.2 passed.
-# Test 1.5.3 passed.
-# Test 1.5.4 passed.
-# Test 1.5.5 passed.
-# Test 1.5.6 passed.
-# Test 1.5.7 passed.
-# Test 1.5.8 passed.
-# Test 1.5.9 passed.
-# Test 1.5.10 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# Test 1.5.11 passed.
-# Test 1.5.12 passed.
-# Test 1.5.13 passed.
-# Test 1.5.14 passed.
-# Test 1.5.15 passed
-# Test 1.5.16 passed.
-# Test 1.5.17 passed
-# Test 1.5.18 passed.
-# Test 1.5.19 passed
-# Test 1 finished
-# Compile of OneBitProcessor.v was successful.
-vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
-# End time: 21:21:39 on Nov 29,2022, Elapsed time: 0:02:42
-# Errors: 34, Warnings: 1
-# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
-# Start time: 21:21:39 on Nov 29,2022
+# Start time: 15:32:04 on Dec 01,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.OneBitProcessor_tb(fast)
 # Loading work.OneBitProcessor(fast)
@@ -215,5 +114,108 @@ run
 # Test 1.5.18 passed.
 # Test 1.5.19 passed
 # Test 1 finished
-# End time: 21:23:19 on Nov 29,2022, Elapsed time: 0:01:40
-# Errors: 509, Warnings: 1
+# Compile of OneBitProcessor.v was successful.
+# Compile of OneBitProcessor_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs=+acc
+# End time: 15:32:20 on Dec 01,2022, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 1
+# vsim 1BitProcessor_rtl.OneBitProcessor_tb -t ns -voptargs="+acc" 
+# Start time: 15:32:20 on Dec 01,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.OneBitProcessor_tb(fast)
+# Loading work.OneBitProcessor(fast)
+# Loading work.OneBitProcessor(fast__1)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ns  Iteration: 0  Instance: /OneBitProcessor_tb File: /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v Line: 1017
+run
+#                    0 << Starting the Simulation
+# Test 1.1.1 passed
+# Test 1.1.2 passed
+# Test 1.1.3 passed
+# Test 1.1.4 passed
+# Test 1.2.1 passed
+# Test 1.2.2 passed
+# Test 1.2.3 passed
+# Test 1.2.4 passed
+# Test 1.2.5 passed
+# Test 2.1 passed
+# Test 2.2 passed
+# Test 2.3 passed
+# Test 2.4 passed
+# Test 2.5 passed
+# Test 2.6 passed
+# Test 2.7 passed
+# Test 2.8 passed
+# Test 2.9 passed
+# Test 2.10 passed
+# Test 2.11 passed
+# Test 2.12 passed
+# Test 2.13 passed
+# Test 2.14 passed
+# Test 2.15 passed
+# Test 2.16 passed
+# Test 2.17 passed
+# Test 2.18 passed
+# Test 2.19 passed
+# Test 2.20 passed
+# Test 2.21 passed
+# Test 2.22 passed
+# Test 2.23 passed
+# Test 2.24 passed
+# Test 2.25 passed
+# Test 2.26 passed
+# Test 2.27 passed
+# Test 2.28 passed
+# Test 2.29 passed
+# Test 2.30 passed
+# Test 2.31 passed
+# Test 2.32 passed
+# Test 2 finished
+# Test 1.2.6 passed
+# Test 1.2.7 passed
+# Test 1.2.8 passed
+# Test 1.3.1 passed
+# Test 1.3.2 passed
+# Test 1.3.3 passed
+# Test 1.3.4 passed
+# Test 1.4.1 passed
+# Test 1.4.2 passed
+# Test 1.4.3 passed
+# Test 1.4.4 passed
+# Test 1.4.5 passed
+# Test 1.4.6 passed
+# Test 1.4.7 passed
+# Test 1.4.8 passed
+# Test 1.4.9 passed
+# Test 1.4.10 passed
+# Test 1.4.11 passed
+# Test 1.4.12 passed
+# Test 1.4.13 passed
+# Test 1.4.14 passed
+# Test 1.4.15 passed
+# Test 1.4.16 passed
+# Test 1.5.1 passed.
+# Test 1.5.2 passed.
+# Test 1.5.3 passed.
+# Test 1.5.4 passed.
+# Test 1.5.5 passed.
+# Test 1.5.6 passed.
+# Test 1.5.7 passed.
+# Test 1.5.8 passed.
+# Test 1.5.9 passed.
+# Test 1.5.10 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.11 passed.
+# Test 1.5.12 passed.
+# Test 1.5.13 passed.
+# Test 1.5.14 passed.
+# Test 1.5.15 passed
+# Test 1.5.16 passed.
+# Test 1.5.17 passed
+# Test 1.5.18 passed.
+# Test 1.5.19 passed
+# Test 1 finished
+# End time: 15:32:34 on Dec 01,2022, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 1

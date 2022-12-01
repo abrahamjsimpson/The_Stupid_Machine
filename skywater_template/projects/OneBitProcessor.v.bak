@@ -35,8 +35,11 @@ module OneBitProcessor
 	// wires
 	wire [(PROG_COUNTER_LENGTH - 1):0] prog_count_return, prog_count_out;
 	wire [(REG_ADDR_LENGTH - 1):0] reg_1_addr, reg_2_addr, reg_3_addr, inst_mid, inst_bottom;
-	wire [(JUMP_BITS - 1):0] jump, operand;
-	wire ctrl_bit, nand_out, bit_6, adder_ctrl;
+	//tri [(REG_ADDR_LENGTH - 1):0] reg_2_addr, reg_3_addr;  // Tri must be explicit or Design Comiler will infer tri-state buffers (TSGEN)
+	wire [(JUMP_BITS - 1):0] operand, jump;
+	//tri [(JUMP_BITS - 1):0] jump;  // Must be explicit; see above
+	wire ctrl_bit, nand_out, adder_ctrl, bit_6;
+	//tri bit_6; // Must be explicit; see above
 	reg data_1, data_2;
 
 	// muxes:
@@ -213,16 +216,20 @@ module OneBitProcessor
 	end  // end always
 
 	// reset loading counters when en is set high
+/*
 	always @ (posedge en) begin
 		load_instruction_counter = 0;
 		load_bit_counter = 0;
 	end 
+*/
 	// write to instruction memory:
 	always @ (posedge clk) begin
 		if (reset) begin
 			for (i = 0; i < INSTRUCTION_MEM; i = i + 1) begin
 				instructions[i] = 'b0000000000000;
 			end
+			load_instruction_counter = 0;
+			load_bit_counter = 0;
 		end else begin
 			if (en) begin
 				instructions[load_instruction_counter][load_bit_counter] = inReg[0];
