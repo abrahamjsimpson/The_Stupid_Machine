@@ -1,10 +1,10 @@
 # The period has to be changed to see if the design can meet the timing constraint
 #Same for the clk_name when using a different design.
-set clk_period 6
+set clk_period 5
 set clk_name clk
 
 #  Define the name of the top module to be synthesized.
-set design mips
+set design OneBitProcessor
 
 # Define the directory paths
 set BASE_DIR	 	[pwd]
@@ -17,7 +17,7 @@ set DDC_DIR 	 	"${BASE_DIR}/DDC"
 set DESIGN_LIB	"${BASE_DIR}/DESIGN_LIBS/$design"
 
 # Define the verilog file list.
-set HDL_FILES $RTL_DIR/mips.sv
+set HDL_FILES $RTL_DIR/OneBitProcessor.v
 
 #Create the directories if they do no exist
 exec mkdir -p $RPT_DIR
@@ -34,7 +34,7 @@ define_design_lib $design -path $DESIGN_LIB
 
 #  Analyze the Verilog sources
 puts "-i- Analyze Verilog sources"
-analyze -format sverilog $HDL_FILES -library $design
+analyze -format verilog $HDL_FILES -library $design
 
 #  Elaborate the design
 puts "-i- Elaborate design"
