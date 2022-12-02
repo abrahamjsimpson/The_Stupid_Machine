@@ -55,21 +55,24 @@ module OneBitProcessor_tb;
 		#10 reset1 = 0;
 
 		// Test that Reset worked
-		// Program Conter:
+		// Program Conter: (does not work for Post-Synthesis files, including mapped files)
+/*
 		if (dut1.prog_counter == '0)
 			$display("Test 1.1.1 passed");
 		else 
 			$display("WARNING: Test 1.1 Failed: prog_counter was %d", dut1.prog_counter);
+*/
 		// Registers (that the unit controlls):
 		if (dut1.outReg == '0)
 			$display("Test 1.1.2 passed");
 		else 
-			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.prog_counter);	
+			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.outReg);	
 		if (dut1.internal_regs == '0)
 			$display("Test 1.1.3 passed");
 		else 
 			$display("WARNING: Test 1.1.3 Failed: internal_regs was %d", dut1.internal_regs);
-		// Instruction Mem:
+/*
+		// Instruction Mem: (does not work for Post-Synthesis files, including mapped files)
 		testFailed = '0;
 		for (i = 0; i < dut1.INSTRUCTION_MEM; i = i + 1) begin
 			if (dut1.instructions[i] == '0)
@@ -83,6 +86,7 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.1.4 failed. See above.");
 		else 
 			$display("Test 1.1.4 passed");
+
 
 		// Test 1.2: load an instruction:
 		input_signals1[0] = 1;
@@ -178,7 +182,7 @@ module OneBitProcessor_tb;
 			$display("Test 1.2.8 passed");
 		else 
 			$display("WARNING: Test 1.2.8 failed: slot999 contained %b", dut1.instructions[999]);
-
+*/
 
 		// Test 1.3: Testing the Program Couner
 		reset1 = 0;
@@ -247,7 +251,8 @@ module OneBitProcessor_tb;
 
 		#10 enable1 = 0;
 
-		// check that prog_counter resets to 0
+		// check that prog_counter resets to 0 (does not work for post-synthesis tests)
+/*
 		if (dut1.prog_counter == 0)
 			$display("Test 1.3.1 passed");
 		else
@@ -270,7 +275,7 @@ module OneBitProcessor_tb;
 			$display("Test 1.3.4 passed");
 		else
 			$display("ERROR: Test 1.3.4 failed: prog_counter was %d", dut1.prog_counter);
-
+*/
 		// Test 1.4: Test that NAND operations function correctly
 
 		reset1 = 0;
@@ -844,20 +849,20 @@ module OneBitProcessor_tb;
 
 		#10 enable1 = 0;
 		#10; // Need to wait a cycle for 1st instruction to execute
-
+/*
 		if (dut1.prog_counter == 1)
 			$display("Test 1.5.1 passed.");
 		else
 			$display("WARNING: Test 1.5.1 failed: prog_counter was %d, not 1", dut1.prog_counter);
-
+*/
 		#10; // Put positive val on internal0
 		#10; // Branch on internal0, prog_counter should now be 4
-
+/*
 		if (dut1.prog_counter == 4)
 			$display("Test 1.5.2 passed.");
 		else
 			$display("WARNING: Test 1.5.2 failed: prog_counter was %d, not 4", dut1.prog_counter);
-
+*/
 		#10; // out0 should be 1 if Test 1.5.2 suceeded
 		if (regs_out1[0] == 1)
 			$display("Test 1.5.3 passed.");
@@ -868,10 +873,12 @@ module OneBitProcessor_tb;
 		#10;   // in1 is 0, so this branch should not activate
 		#10; // branch: go back 2 instructions, to invert internal2
 		#10; // Should invert internal2 again back to 0
+/*
 		if (dut1.prog_counter == 6)
 			$display("Test 1.5.4 passed.");
 		else
 			$display("WARNING: Test 1.5.4 failed: prog_couner was %d", dut1.prog_counter);
+*/
 		if (dut1.internal_regs[2] == 0)
 			$display("Test 1.5.5 passed.");
 		else
@@ -880,36 +887,43 @@ module OneBitProcessor_tb;
 
 		input_signals1[1] = 1;
 		#10; // With in1 high, should now go forward 3
+/*
 		if (dut1.prog_counter == 9)
 			$display("Test 1.5.6 passed.");
 		else
 			$display("WARNING: Test 1.5.6 failed: prog_couner was %d", dut1.prog_counter);
-
+*/
 		// input_signals1[1] is already 1, so should stay still
 		#10;
+/*
 		if (dut1.prog_counter == 9)
 			$display("Test 1.5.7 passed.");
 		else
 			$display("WARNING: Test 1.5.7 failed: prog_couner was %d", dut1.prog_counter);	
+*/
 		if (regs_out1[1] == 0)
 			$display("Test 1.5.8 passed.");
 		else
 			$display("WARNING: Test 1.5.8 failed: regs_out1[1] was %b", regs_out1[1]);		
 
 		#10;  // prog_counter should stay at 9 no matter how much time passes as long as in1 is 1
+/*
 		if (dut1.prog_counter == 9)
 			$display("Test 1.5.9 passed.");
 		else
 			$display("WARNING: Test 1.5.9 failed: prog_couner was %d", dut1.prog_counter);	
+*/
 		if (regs_out1[1] == 0)
 			$display("Test 1.5.10 passed.");
 		else
 			$display("WARNING: Test 1.5.10 failed: regs_out1[1] was %b", regs_out1[1]);	
 		#100;	
+/*
 		if (dut1.prog_counter == 9)
 			$display("Test 1.5.11 passed.");
 		else
 			$display("WARNING: Test 1.5.11 failed: prog_couner was %d", dut1.prog_counter);
+*/
 		if (regs_out1[1] == 0)
 			$display("Test 1.5.12 passed.");
 		else
@@ -918,10 +932,12 @@ module OneBitProcessor_tb;
 
 		input_signals1[1] = 0;
 		#10; // Now the counter should advance; 
+/*
 		if (dut1.prog_counter == 10)
 			$display("Test 1.5.11 passed.");
 		else
 			$display("WARNING: Test 1.5.11 failed: prog_couner was %d", dut1.prog_counter);
+*/
 		#10;
 		if (regs_out1[1] == 1)
 			$display("Test 1.5.12 passed.");
@@ -931,25 +947,31 @@ module OneBitProcessor_tb;
 		input_signals1[0] = 1;
 		//next instruction is same as last branch but on in0 (and "advances" 0 instead of regressing)
 		#10;
+/*
 		if (dut1.prog_counter == 11)
 			$display("Test 1.5.13 passed.");
 		else
 			$display("WARNING: Test 1.5.13 failed: prog_couner was %d", dut1.prog_counter);	
+*/
 		#10; // prog_counter should stay same as long as in0 is 1)
+/*
 		if (dut1.prog_counter == 11)
 			$display("Test 1.5.14 passed.");
 		else
 			$display("WARNING: Test 1.5.14 failed: prog_couner was %d", dut1.prog_counter);	
+*/
 		if (regs_out1[1] == 1)
 			$display("Test 1.5.15 passed");
 		else
 			$display("ERROR: Test 1.5.15 failed: regs_out[1] was %b", regs_out1[1]);
 
 		#50;
+/*
 		if (dut1.prog_counter == 11)
 			$display("Test 1.5.16 passed.");
 		else
 			$display("WARNING: Test 1.5.16 failed: prog_couner was %d", dut1.prog_counter);
+*/
 		if (regs_out1[1] == 1)
 			$display("Test 1.5.17 passed");
 		else
@@ -957,10 +979,12 @@ module OneBitProcessor_tb;
 
 		input_signals1[0] = 0; // Now the prog_counter should advance
 		#10;
+/*
 		if (dut1.prog_counter == 12)
 			$display("Test 1.5.18 passed.");
 		else
 			$display("WARNING: Test 1.5.18 failed: prog_couner was %d", dut1.prog_counter);	
+*/
 		#10;  // Last instruction: flip out1 back to 0
 		if (regs_out1[1] == 0)
 			$display("Test 1.5.19 passed");
@@ -1001,7 +1025,7 @@ module OneBitProcessor_tb;
 
 	initial begin
 		// load instructions from file
-		fd_test2 = $fopen(Absolute file path here, "r");
+		fd_test2 = $fopen(Absolute path to shift_reg.1bin, "r");
 
 		// In future, using a reative file path and/or a macro would be better, but I couldn't get Vsim to cooperate
 		//fd_test2 = $fopen(`ABS_FILEPATH);

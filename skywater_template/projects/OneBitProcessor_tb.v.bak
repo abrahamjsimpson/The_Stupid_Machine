@@ -55,21 +55,24 @@ module OneBitProcessor_tb;
 		#10 reset1 = 0;
 
 		// Test that Reset worked
-		// Program Conter:
+		// Program Conter: (does not work for Post-Synthesis files, including mapped files)
+/*
 		if (dut1.prog_counter == '0)
 			$display("Test 1.1.1 passed");
 		else 
 			$display("WARNING: Test 1.1 Failed: prog_counter was %d", dut1.prog_counter);
+*/
 		// Registers (that the unit controlls):
 		if (dut1.outReg == '0)
 			$display("Test 1.1.2 passed");
 		else 
-			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.prog_counter);	
+			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.outReg);	
 		if (dut1.internal_regs == '0)
 			$display("Test 1.1.3 passed");
 		else 
 			$display("WARNING: Test 1.1.3 Failed: internal_regs was %d", dut1.internal_regs);
-		// Instruction Mem:
+/*
+		// Instruction Mem: (does not work for Post-Synthesis files, including mapped files)
 		testFailed = '0;
 		for (i = 0; i < dut1.INSTRUCTION_MEM; i = i + 1) begin
 			if (dut1.instructions[i] == '0)
@@ -83,6 +86,7 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.1.4 failed. See above.");
 		else 
 			$display("Test 1.1.4 passed");
+
 
 		// Test 1.2: load an instruction:
 		input_signals1[0] = 1;
@@ -178,7 +182,7 @@ module OneBitProcessor_tb;
 			$display("Test 1.2.8 passed");
 		else 
 			$display("WARNING: Test 1.2.8 failed: slot999 contained %b", dut1.instructions[999]);
-
+*/
 
 		// Test 1.3: Testing the Program Couner
 		reset1 = 0;
@@ -247,7 +251,8 @@ module OneBitProcessor_tb;
 
 		#10 enable1 = 0;
 
-		// check that prog_counter resets to 0
+		// check that prog_counter resets to 0 (does not work for post-synthesis tests)
+/*
 		if (dut1.prog_counter == 0)
 			$display("Test 1.3.1 passed");
 		else
@@ -270,7 +275,7 @@ module OneBitProcessor_tb;
 			$display("Test 1.3.4 passed");
 		else
 			$display("ERROR: Test 1.3.4 failed: prog_counter was %d", dut1.prog_counter);
-
+*/
 		// Test 1.4: Test that NAND operations function correctly
 
 		reset1 = 0;
@@ -1001,7 +1006,7 @@ module OneBitProcessor_tb;
 
 	initial begin
 		// load instructions from file
-		fd_test2 = $fopen(Absolute file path to shift_reg.1bin, "r");
+		fd_test2 = $fopen("/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/Assembler/shift_reg.1bin", "r");
 
 		// In future, using a reative file path and/or a macro would be better, but I couldn't get Vsim to cooperate
 		//fd_test2 = $fopen(`ABS_FILEPATH);

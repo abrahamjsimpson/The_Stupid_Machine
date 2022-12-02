@@ -33,9 +33,6 @@ tsmc_template/HDL/RTL/transcript
 tsmc_template/HDL/RTL/work/
 tsmc_template/design_compiler/DDC/
 tsmc_template/design_compiler/DESIGN_LIBS/
-tsmc_template/design_compiler/RPT/
-tsmc_template/design_compiler/SDC/
-tsmc_template/design_compiler/SDF/
 tsmc_template/design_compiler/command.log
 tsmc_template/design_compiler/default.svf
 tsmc_template/design_compiler/filenames.log

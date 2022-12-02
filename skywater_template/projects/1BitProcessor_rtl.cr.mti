@@ -5,11 +5,4 @@ QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
 Top level modules:
 	OneBitProcessor
 
-} {} {}} /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v {1 {vlog -work 1BitProcessor_rtl -vopt -stats=none /home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/skywater_template/projects/OneBitProcessor_tb.v
-QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
--- Compiling module OneBitProcessor_tb
-
-Top level modules:
-	OneBitProcessor_tb
-
 } {} {}}
