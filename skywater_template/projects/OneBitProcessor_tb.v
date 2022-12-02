@@ -1025,7 +1025,7 @@ module OneBitProcessor_tb;
 
 	initial begin
 		// load instructions from file
-		fd_test2 = $fopen(Absolute path to shift_reg.1bin, "r");
+		fd_test2 = $fopen("/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/Assembler/shift_reg.1bin", "r");
 
 		// In future, using a reative file path and/or a macro would be better, but I couldn't get Vsim to cooperate
 		//fd_test2 = $fopen(`ABS_FILEPATH);
@@ -1064,6 +1064,7 @@ module OneBitProcessor_tb;
 			end
 		end
 */
+
 		// Reset dut
 		reset2 = 0;
 		enable2 = 0;
@@ -1325,5 +1326,6 @@ module OneBitProcessor_tb;
 		$display("Test 2 finished");
 		// End of Test 2 (shift_reg.1bin)
 	end
+
 endmodule
 	
