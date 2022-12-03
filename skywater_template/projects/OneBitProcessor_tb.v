@@ -8,6 +8,7 @@ Tests for the OneBitProcessor
 
 // Macros
 //`define ABS_FILEPATH "ur path here"
+`include "/home/u0894108/Documents/VLSI/final_proj/The_Stupid_Machine/tsmc_template/modelsim/OneBitProcessor_mapped.v"
 
 module OneBitProcessor_tb;
 
@@ -66,11 +67,13 @@ module OneBitProcessor_tb;
 		if (dut1.outReg == '0)
 			$display("Test 1.1.2 passed");
 		else 
-			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.outReg);	
+			$display("WARNING: Test 1.1.2 Failed: outReg was %b", dut1.outReg);
+/*
 		if (dut1.internal_regs == '0)
 			$display("Test 1.1.3 passed");
 		else 
 			$display("WARNING: Test 1.1.3 Failed: internal_regs was %d", dut1.internal_regs);
+*/
 /*
 		// Instruction Mem: (does not work for Post-Synthesis files, including mapped files)
 		testFailed = '0;
@@ -600,11 +603,12 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.4.9 failed: regs_out[2] was %b", regs_out1[2]); 
 
 		#10;
+/*
 		if (dut1.internal_regs[2] == 1)
 			$display("Test 1.4.10 passed");
 		else
 			$display("WARNING: Test 1.4.10 failed: intenal_regs[2] was %b", dut1.internal_regs[2]); 
-
+*/
 		#10;
 		if (regs_out1[5] == 0)
 			$display("Test 1.4.11 passed");
@@ -638,11 +642,12 @@ module OneBitProcessor_tb;
 			$display("WARNING: Test 1.4.15 failed: regs_out[3] was %b", regs_out1[3]); 
 
 		#10;
+/*
 		if (dut1.internal_regs[4] == 1)
 			$display("Test 1.4.16 passed");
 		else
 			$display("WARNING: Test 1.4.16 failed: internal_regs[4] was %b", dut1.internal_regs[4]);
-
+*/
 
 		// Test 1.5: Branching statements
 		reset1 = 0;
@@ -879,11 +884,12 @@ module OneBitProcessor_tb;
 		else
 			$display("WARNING: Test 1.5.4 failed: prog_couner was %d", dut1.prog_counter);
 */
+/*
 		if (dut1.internal_regs[2] == 0)
 			$display("Test 1.5.5 passed.");
 		else
 			$display("WARNING: Test 1.5.5 failed: internal_regs[2] was %b", dut1.internal_regs[2]);
-
+*/
 
 		input_signals1[1] = 1;
 		#10; // With in1 high, should now go forward 3
