@@ -1,6 +1,6 @@
 # The period has to be changed to see if the design can meet the timing constraint
 #Same for the clk_name when using a different design.
-set clk_period 5
+set clk_period 100
 set clk_name clk
 
 #  Define the name of the top module to be synthesized.
@@ -63,7 +63,7 @@ check_design
 
 #  Map and optimize the design
 puts "-i- Map and optimize design"
-compile
+compile #-area_effort high
 
 #  Save the mapped design
 puts "-i- Save mapped design"
