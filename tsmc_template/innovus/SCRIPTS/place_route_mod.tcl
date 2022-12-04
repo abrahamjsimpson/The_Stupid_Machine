@@ -175,7 +175,7 @@ proc floorplan_design {} {
    addHaloToBlock {2 2 2 2} -fromInstBox -snapToSite dp/rf/regfile 
    fit
 	 }
-
+   place_io_add_io_filler  # Added as per page/slide 11 of Final_Project_Guidelines.pdf
    save_design fplan
 }
 
